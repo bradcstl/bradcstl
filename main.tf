@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "eu-west-2"
+  region     = "eu-west-1"
 }
 #   ami           = "ami-0e5f882be1900e43b"
 resource "aws_vpc" "actpro-vpc" {
