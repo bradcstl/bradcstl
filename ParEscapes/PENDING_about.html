@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121B25">
+
+  <!-- Safari on iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Microsoft Edge/Windows -->
+  <meta name="msapplication-navbutton-color" content="#121B25">
+  <meta name="msapplication-TileColor" content="#121B25">
+  <title>Par5Escapes</title>
+
+  <!-- Bootstrap's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom style CSS-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/hoteldetails_2.css">
+    <link rel="stylesheet" href="css/hoteloffercontainer.css">
+
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
+
+<!----------------------------------HEADER-START------------------------------------->
+<!-- Encapsulated Header Wrapper -->
+<div class="encapsulated-header-wrapper">
+      <!-- Main Nav -->
+      <div class="main-nav">
+          <!-- Logo -->
+          <div class="logo">
+             <a href="index.html"> <img src="images/par5logo_h.png" alt="Logo"></a>
+          </div>
+
+      <!-- Hamburger Menu (Only visible on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+      
+      <!-- Side Menu for Mobile -->
+      <div class="side-menu" id="sideMenu">
+     <!-- Side Menu Header with Logo and Close Button -->
+     <div class="side-menu-header">
+        <!-- Logo in Side Menu -->
+        <div class="logo">
+          <a href="index.html"><img src="images/par5logo_h.png" alt="Logo"></a>
+        </div>
+        <!-- Close Button -->
+        <div class="close-btn" id="closeNav">&times;</div>
+      </div>
+     <!-- Dropdown for Destinations -->
+     <button class="dropdown-btn">Destinations <i class="fas fa-chevron-down dropdown-arrow"></i></button>
+     <div class="dropdown-content">
+       <a href="#">Turkey</a>
+       <a href="#">Spain</a>
+       <a href="#">Portugal</a>
+       <a href="#">UAE</a>
+       <a href="#">France</a>
+       <a href="#">United Kingdom</a>
+       <a href="#">Morocco</a>
+       <a href="#">Oman</a>
+     </div>
+    <a href="#">Courses</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact Us</a>
+      </div>
+  
+      <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#" class="nav-item">Destinations<i class="fas fa-chevron-down"></i></a>
+            <!-- Dropdown -->
+            <div class="dropdown-menu destinations-menu">
+                <div class="dest-column">
+                    <a href="#">Portugal</a>
+                    <a href="#">Spain</a>
+                    <a href="#">Turkey</a>
+                    <a href="#">Canary Islands</a>
+                    <a href="#">Greece</a>
+                    <a href="#">Morocco</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">The UK</a>
+                    <a href="#">Ireland</a>
+                    <a href="#">Abu Dhabi</a>
+                    <a href="#">Dubai</a>
+                    <a href="#">South Africa</a>
+                    <a href="#">Mauritius</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">Cyprus</a>
+                    <a href="#">France</a>
+                    <a href="#">USA</a>
+                    <a href="#">Caribbean</a>
+                    <a href="#">Italy</a>
+                    <a href="#">Belgium</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">Bulgaria</a>
+                    <a href="#">Ras Al Khaimah</a>
+                    <a href="#">Switzerland</a>
+                    <a href="#">Tunisia</a>
+                </div>
+            </div>
+
+            <a href="#">About Us</a>
+            <a href="#">Blogs</a>
+        </div>
+
+        <!-- Contact Us & Opening Hours -->
+        <div class="d-flex align-items-center">
+            
+            <div class="contact-us">
+                <button>Contact Us <i class="fas fa-chevron-down"></i></button>
+                <!-- Contact Us Dropdown -->
+                <div class="contact-us-dropdown">
+                    <p>Call us now on <strong>01342 811 777</strong></p>
+                    <p>Opening times:</p>
+                    <p>Mon-Fri: 8am - 6pm</p>
+                    <p>Sat: 9am - 1pm</p>
+                    <p>Sun: Closed</p>
+                    <a href="#">Request a callback</a>
+                    <a href="#">Request a quote</a>
+                    <a href="#">Ask a question</a>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+<!--------------------------------HEADER-END---------------------------------->
+
+<div class="page-container">
+  <!-- Tabs Container -->
+  <div class="popup">
+      <div class="tabs">
+          <input type="radio" id="tab1" name="tab" checked="true">
+          <label for="tab1" data-tab="1" class="tab-label active">About Us</label>
+          <input type="radio" id="tab2" name="tab">
+          <label for="tab2" data-tab="2" class="tab-label">Book With Confidence</label>
+          <input type="radio" id="tab3" name="tab">
+          <label for="tab3" data-tab="3" class="tab-label">Cookie Policy</label>
+          <input type="radio" id="tab4" name="tab">
+          <label for="tab4" data-tab="4" class="tab-label">GDPR Data Protection</label>
+          <input type="radio" id="tab5" name="tab">
+          <label for="tab5" data-tab="5" class="tab-label">Privacy Policy</label>
+          <input type="radio" id="tab6" name="tab">
+          <label for="tab6" data-tab="6" class="tab-label">Terms & Conditions</label>
+          <input type="radio" id="tab7" name="tab">
+          <label for="tab7" data-tab="7" class="tab-label">Support</label>
+          <input type="radio" id="tab8" name="tab">
+          <label for="tab8" data-tab="8" class="tab-label">Contact Us</label>
+          <div class="marker">
+              <div id="top"></div>
+              <div id="bottom"></div>
+          </div>
+      </div>
+   <!-- Content Areas -->
+   <div class="tab-content-container">
+      <div class="tab-content-area active" data-content="1">
+          <h2>About Us</h2>
+          <h3>Par5 Escapes: Exceptional Golf Holidays Made Easy</h3>
+          <p>Par5 Escapes is a premier golf travel agency based in the UK, offering exceptional golf holidays across Europe, Africa, and the Middle East. As a full-service travel agency, Par5 Escapes ensures that every aspect of your trip is meticulously planned and managed, providing you with a seamless and memorable golf experience. We work closely with fully bonded tour operators to ensure that all aspects of your golf holiday are fully covered and protected. From flights and transfers to accommodation and tee times, we are your one point of contact for every element of your trip. Our dedicated team is always available to answer any questions, big or small, that you may have along the way.
+            As golf specialists, we leverage our firsthand experience and in-depth knowledge of golf destinations to build the perfect itinerary tailored to your preferences. We pride ourselves on our customer service, understanding that it’s the small details that make a big difference in creating a truly memorable holiday.
+            <h3>Our Team</h3>
+            <p>At Par5 Escapes, our team is dedicated to creating the best golfing experiences for our customers. Leading our team is Simon Wakefield, our Golf Director, who played on the European Tour for 18 years and has played over 1,000 golf courses around the world. Simon’s deep knowledge of golf courses worldwide is invaluable in crafting exceptional golf holidays tailored to each customer’s preferences.
+            Our sales team is comprised entirely of avid golfers and single handicaps, each with extensive experience in the golf travel industry. Their passion for golf and firsthand knowledge of the sport ensures that every detail of your trip is meticulously planned and executed, providing you with a seamless and unforgettable golf holiday.</p>
+      </div>
+      <div class="tab-content-area" data-content="2">
+          <h2>Book With Confidence</h2>
+          <p>
+            Book with Confidence
+            At Par5 Escapes, we prioritize your peace of mind. We work closely with fully bonded tour operators to ensure that all aspects of your golf holiday are fully covered and protected. From flights and transfers to accommodation and tee times, we serve as your single point of contact for every element of your trip. Our dedicated team is always available to answer any questions, big or small, ensuring you have a seamless and worry-free experience. 
+            
+            </p>
+      </div>
+      <div class="tab-content-area" data-content="3">
+          <h2>Accommodation</h2>
+          <p>There are 174 rooms at Sueno Golf Resort - split out into 86 Standard Rooms, 71 Senior Rooms, 7 Junior Suites and 2 King Suites, 2 Royal Suites and 4 Jacuzzi Suites - each with air conditioning, plasma satellite TV and a balcony. Each room has the luxury of having stunning sea views or a vantage out across the two stunning courses at Sueno Golf Club.</p>
+      </div>
+      <div class="tab-content-area" data-content="4">
+          <h2>Restaurant & Bars</h2>
+          <p>Information about dining options.</p>
+      </div>
+      <div class="tab-content-area" data-content="5">
+          <h2>Spa & Leisure</h2>
+          <p>Description of spa and leisure facilities.</p>
+      </div>
+      <div class="tab-content-area" data-content="6">
+          <h2>Location</h2>
+          <p>Details about the location and surrounding area.</p>
+      </div>
+      <div class="tab-content-area" data-content="7">
+          <h2>On Site Activities</h2>
+          <p>Information on activities within the resort.</p>
+      </div>
+      <div class="tab-content-area" data-content="8">
+          <h2>Nearby</h2>
+          <p>Information on nearby attractions and points of interest.</p>
+      </div>
+  </div>
+</div>
+</div>
+
+<!----------------------------FOOTER-START--------------------------------->
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="/Par5Escapes/images/PAR5_NEW.png" alt="Par5 Escapes Logo">
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-details">
+        <div class="footer-logo2">
+          <img src="/Par5Escapes/images/abta-logo-B7ACA4B9F5-seeklogo.com.png" alt="Par5 Escapes Logo">
+        </div>
+      </div>
+    </div>
+    <div class="partners-slider-container">
+      <h3 class="partners-slider-title">Proudly in Partnership With</h3>
+      <div class="partners-slider-wrapper">
+        <div class="partners-slider-track">
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 1"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 2"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 3"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 4"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 5"></div>
+          <!-- Duplicate logos for smooth scrolling -->
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 1"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 2"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 3"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 4"></div>
+          <div class="partner-logo-item"><img src="/Par5Escapes/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 5"></div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <p>© Par5 Escapes 2024 - All rights reserved.</p>
+  </div>
+</footer>
+<!----------------------------FOOTER-END--------------------------------->
+
+<!----------------------------BOTTOMLOGO-START--------------------------------->
+<div class="certification-logos-container">
+  <img src="images/abta-logo-B7ACA4B9F5-seeklogo.com.png" alt="Certification 1" class="logo">
+  <img src="images/ATOL_Protected-logo-39861CA549-seeklogo.com.png" alt="Certification 2" class="logo">
+</div>
+<!----------------------------BOTTOMLOGO-END-------------------------------->
+
+<!------------------------GLOBAL-SCRIPTS-START---------------------->
+<script src="js/hotelmodal.js"></script>
+<script src="js/hoteltabfunction.js"></script>
+<script src="js/mobilehamburger.js"></script>
+<script src="js/slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<script src="js/trustpilot.js"></script>
+<script src="js/popgolfs.js"></script>
+<script src="js/whychoose.js"></script>
+<script src="js/topgetaways.js"></script>
+<script src="js/specialoffers.js"></script>
+<script src="js/enquirymodal.js"></script>
+<!------------------------GLOBAL-SCRIPTS-END---------------------->
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+.certification-logos-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    gap: 10px; /* Space between logos */
+    background-color: rgba(194, 194, 194, 0.458); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 0 8px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures it stays on top */
+    backdrop-filter: blur(10px);
+}
+
+.certification-logos-container .logo {
+    height: 2.5rem; /* Adjust size as needed */
+    width: auto;
+}

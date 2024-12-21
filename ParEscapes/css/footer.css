@@ -1,0 +1,136 @@
+/* Encapsulated Footer Wrapper */
+.encapsulated-footer {
+    padding: 40px 20px;
+    color: #21294b;
+    font-family: 'Work Sans', sans-serif;
+    max-width: 1800px;
+    margin: auto;
+    background-color: #21294b;
+}
+@media (max-width: 768px){
+  .encapsulated-footer {
+    padding: 40px 20px;
+    color: #21294b;
+    font-family: 'Work Sans', sans-serif;
+    max-width: 100%;
+    margin: auto;
+    background-color: #21294b;
+}
+}
+
+/* Content Container with Padding */
+.encapsulated-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px; /* Left and right padding */
+}
+@media (max-width: 768px){
+  .encapsulated-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+}
+}
+
+/* Left Section: Opening Times & Contact */
+.encapsulated-footer .footer-left {
+    width: 40%;
+}
+
+.encapsulated-footer h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.encapsulated-footer p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.encapsulated-footer a {
+    color: #00ff7f;
+    text-decoration: none;
+}
+
+.encapsulated-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section: Address & Registration Info */
+.encapsulated-footer .footer-right {
+    width: 40%;
+}
+
+.encapsulated-footer .footer-right p {
+    margin-bottom: 5px;
+}
+
+.encapsulated-footer .footer-right strong {
+    color: #00ff7f;
+}
+
+/* Footer Bottom Links and Social Icons */
+.encapsulated-footer .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 40px; /* Adding padding for consistency */
+}
+
+.encapsulated-footer .footer-links {
+    margin-bottom: 15px;
+}
+@media (max-width: 768px){
+  .encapsulated-footer .footer-links {
+    margin-bottom: 15px;
+    text-align: center;
+    display: inline-flex;
+}
+}
+
+.encapsulated-footer .footer-links a {
+    margin: 0 15px;
+    color: #00ff7f;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.encapsulated-footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.encapsulated-footer .social-icons {
+    margin-top: 10px;
+}
+
+.encapsulated-footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.encapsulated-footer .social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Footer Bottom Green Bar */
+.footer-green-bar {
+    background-color: #00b06b;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0 40px;
+}
+
+/* Footer Bottom Legal Text */
+.encapsulated-footer .footer-legal {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+}

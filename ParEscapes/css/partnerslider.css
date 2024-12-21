@@ -1,0 +1,66 @@
+.partners-slider-container {
+    text-align: center;
+    margin-top: 30rem;
+    width: 60%;
+  }
+  
+  .partners-slider-title {
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+  }
+  
+  .partners-slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100px; /* Adjust height based on logo size */
+  }
+  
+  .partners-slider-track {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    animation: partners-scroll 20s linear infinite;
+  }
+  
+  .partner-logo-item {
+    flex-shrink: 0;
+    width: 100px; /* Adjust width for each logo */
+    height: auto;
+  }
+  
+  .partner-logo-item img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .partner-logo-item img:hover {
+    opacity: 1;
+  }
+  
+  /* Animation */
+  @keyframes partners-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .partners-slider-track {
+      gap: 15px;
+    }
+  
+    .partner-logo-item {
+      width: 100px; /* Adjust for smaller screens */
+    }
+  }

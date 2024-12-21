@@ -1,0 +1,2817 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121B25">
+
+  <!-- Safari on iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Microsoft Edge/Windows -->
+  <meta name="msapplication-navbutton-color" content="#121B25">
+  <meta name="msapplication-TileColor" content="#121B25">
+  <title>Par5Escapes</title>
+
+  <!-- Bootstrap's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom style CSS-->
+    <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
+
+    <!-- Encapsulated Header Wrapper -->
+    <div class="encapsulated-header-wrapper">
+      <!-- Encapsulated Styles -->
+      <style>
+            /* Encapsulated Header Wrapper */
+        .encapsulated-header-wrapper {
+            font-family: 'Work Sans', sans-serif;
+            color: #fff;
+            font-size: 16px;
+            max-width: 1800px;
+            margin: 0 auto; /* Center the header */
+            position: sticky;
+            top: 0; /* Stick at the top */
+            z-index: 999; /* Ensure it's above other elements */
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper {
+            font-family: 'Work Sans', sans-serif;
+            position: sticky;
+            color: #fff;
+            font-size: 16px;
+            max-width: 100%;
+            margin: 0 auto; /* Center the header */
+            position: sticky;
+            top: 0; /* Stick at the top */
+            z-index: 999; /* Ensure it's above other elements */
+        }
+        }
+
+        /* Top Bar */
+        .encapsulated-header-wrapper .top-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #21294b;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .encapsulated-header-wrapper .top-bar a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        /* Main Nav Bar */
+        .encapsulated-header-wrapper .main-nav {
+            position: sticky;
+            top: 1.2rem;
+            width: 100%;
+            background-color: #1c2343;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .main-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: #1c2343;
+            padding: 15px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            height: 5rem;
+        }
+
+        }
+
+        /* Logo */
+        .encapsulated-header-wrapper .logo img {
+            max-height: 42px;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .logo img {
+            max-height: 27px;
+            
+        }
+        }
+
+        /* Nav Links */
+        .encapsulated-header-wrapper .nav-links {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        .encapsulated-header-wrapper .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .nav-links a:hover {
+            color: #00ff7f;
+            transition: all 0.3s ease-in-out;
+        }
+
+          /* Green Line Animation */
+        .green-bar {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            height: 3px;
+            background-color: #00ff7f;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+        .encapsulated-header-wrapper:hover .green-bar {
+            width: 100%;
+        }
+
+        /* Hover Effect for Destinations Tab */
+        .encapsulated-header-wrapper .nav-links a:hover {
+            background-color: #00ff7f;
+            color: #222550;
+            border-radius: 5px;
+            margin: auto;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            gap: 10px;
+        }
+          /* Dropdown for "Destinations" */
+        .encapsulated-header-wrapper .nav-links .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 51px;
+            left: 0;
+            background-color: #1c2343;
+            padding: 44px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 549px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .nav-links a:hover + .dropdown-menu,
+        .encapsulated-header-wrapper .nav-links .dropdown-menu:hover {
+            display: grid;
+            opacity: 1;
+            visibility: visible;
+            /*top: 60px;*/
+        }
+
+        .encapsulated-header-wrapper .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .encapsulated-header-wrapper .dropdown-menu a:hover {
+            color: #1c2343;
+        }
+
+        /* Contact Us Button */
+        .encapsulated-header-wrapper .contact-us {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-right: 50px;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .contact-us {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-right: auto;
+        }
+        }
+
+        .encapsulated-header-wrapper .contact-us button {
+            background-color:#00b06b;
+            color: #222550;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease-in-out;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .contact-us button {
+            background-color:#00b06b;
+            color: #222550;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease-in-out;
+            
+        }
+        }
+
+        .encapsulated-header-wrapper .contact-us button:hover {
+            background-color:#00ff7f;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .contact-us-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            z-index: 999;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .contact-us-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 10rem;
+            z-index: 999;
+            line-height: 0.9rem;
+            font-size: 12px;
+            border-radius: 10px;
+        }
+        }
+
+        .encapsulated-header-wrapper .contact-us button:focus + .contact-us-dropdown,
+        .encapsulated-header-wrapper .contact-us button:active + .contact-us-dropdown {
+            display: block;
+        }
+
+        /* Hamburger Menu */
+        @media (max-width: 768px){
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger span:nth-child(1) {
+      transform-origin: top left;
+    }
+
+    .hamburger span:nth-child(2) {
+      transform-origin: center;
+    }
+
+    .hamburger span:nth-child(3) {
+      transform-origin: bottom left;
+    }
+}
+
+    /* Side Menu */
+    @media only screen and (max-width: 768px){
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 42%;
+      height: 100%;
+      background-color: #1c2343;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    .side-menu.active {
+      transform: translateX(0);
+    }
+
+    .side-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+      display: flex;
+    }
+
+    /* Logo and Close Button Inside the Side Menu */
+    .side-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .side-menu .logo img {
+      max-height: 20px;
+      margin-top: 30px;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* Dropdown within the side menu for Destinations */
+    .dropdown-btn {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+      align-items: center;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .dropdown-arrow {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Rotate arrow when active */
+    .dropdown-btn.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Content for Destinations */
+    .dropdown-content {
+      /*display: none;*/
+      flex-direction: column;
+      padding-left: 20px;
+      gap: 10px;
+      transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      will-change: max-height, opacity;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+    }
+
+    /* Show dropdown content when active */
+    .dropdown-btn.active + .dropdown-content {
+      /*display: flex;*/
+      flex-direction: column;
+      max-height: 500px; /* Adjust as needed */
+      opacity: 1;
+    }
+
+    /* Overlay */
+    .overlayy {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      z-index: 999;
+    }
+
+    .overlayy.active {
+      opacity: 1;
+      visibility: visible;
+    }
+}
+/* Make sure the side menu is hidden on screens larger than 768px */
+@media only screen and (min-width: 769px) {
+    .side-menu {
+        display: none;
+    }
+}
+
+        /* Opening Hours */
+        .encapsulated-header-wrapper .opening-hours {
+            margin-right: 20px;
+            text-align: right;
+            color: #fff;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .opening-hours 
+            {
+            margin-right: 10px;
+            text-align: right;
+            color: #fff;
+            }
+        }
+
+        .encapsulated-header-wrapper .opening-hours p {
+            margin: 0;
+            font-size: 14px;
+            color: white;
+        }
+        @media (max-width: 768px){
+            .encapsulated-header-wrapper .opening-hours p 
+            {
+            margin: 0;
+            font-size: 9.5px;
+            color: white;
+            line-height: 1rem;
+             }
+        }
+
+        .encapsulated-header-wrapper .opening-hours span {
+            color: #00ff7f;
+        }
+
+            /* Media Query for Mobile */
+        @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+            position: absolute;
+            right: 20px; /* Align it to the right */
+            top: 30px; /* Align it with the main navbar */
+        }
+
+        .encapsulated-header-wrapper .nav-links {
+            display: none; /* Hide nav links on mobile */
+        }
+        }
+      </style>
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+          <a href="#"></a>
+          <a href="#"></a>
+      </div>
+
+      <!-- Main Nav -->
+      <div class="main-nav">
+          <!-- Logo -->
+          <div class="logo">
+             <a href="index.html"> <img src="images/par5logo_h.png" alt="Logo"></a>
+          </div>
+
+        <!-- Green Line -->
+   <!-- <div class="green-bar"></div>-->
+  
+      <!-- Hamburger Menu (Only visible on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+      
+  <!-- Side Menu for Mobile -->
+  <div class="side-menu" id="sideMenu">
+     <!-- Side Menu Header with Logo and Close Button -->
+     <div class="side-menu-header">
+        <!-- Logo in Side Menu -->
+        <div class="logo">
+          <a href="index.html"><img src="images/par5logo_h.png" alt="Logo"></a>
+        </div>
+        <!-- Close Button -->
+        <div class="close-btn" id="closeNav">&times;</div>
+    </div>
+     <!-- Dropdown for Destinations -->
+     <button class="dropdown-btn">Destinations <i class="fas fa-chevron-down dropdown-arrow"></i></button>
+     <div class="dropdown-content">
+       <a href="#">Turkey</a>
+       <a href="#">Spain</a>
+       <a href="#">Portugal</a>
+       <a href="#">UAE</a>
+       <a href="#">France</a>
+       <a href="#">United Kingdom</a>
+       <a href="#">Morocco</a>
+       <a href="#">Oman</a>
+     </div>
+    <a href="#">Courses</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlayy" id="overlayy"></div>
+
+          <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#" class="nav-item">Destinations<i class="fas fa-chevron-down"></i></a>
+            <!-- Dropdown -->
+            <div class="dropdown-menu destinations-menu">
+                <div class="dest-column">
+                    <a href="#">Portugal</a>
+                    <a href="#">Spain</a>
+                    <a href="#">Turkey</a>
+                    <a href="#">Canary Islands</a>
+                    <a href="#">Greece</a>
+                    <a href="#">Morocco</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">The UK</a>
+                    <a href="#">Ireland</a>
+                    <a href="#">Abu Dhabi</a>
+                    <a href="#">Dubai</a>
+                    <a href="#">South Africa</a>
+                    <a href="#">Mauritius</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">Cyprus</a>
+                    <a href="#">France</a>
+                    <a href="#">USA</a>
+                    <a href="#">Caribbean</a>
+                    <a href="#">Italy</a>
+                    <a href="#">Belgium</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">Bulgaria</a>
+                    <a href="#">Ras Al Khaimah</a>
+                    <a href="#">Switzerland</a>
+                    <a href="#">Tunisia</a>
+                </div>
+            </div>
+
+            <a href="#">Courses</a>
+            <a href="#">Tuition Holidays</a>
+            <a href="#">Offers</a>
+            <a href="#">Inspiration</a>
+        </div>
+
+        <!-- Contact Us & Opening Hours -->
+        <div class="d-flex align-items-center">
+            <div class="opening-hours">
+                <p>Open today 8am - 6pm</p>
+                <p><span>01342 811 777</span></p>
+            </div>
+            <div class="contact-us">
+                <button>Contact Us <i class="fas fa-chevron-down"></i></button>
+                <!-- Contact Us Dropdown -->
+                <div class="contact-us-dropdown">
+                    <p>Call us now on <strong>01342 811 777</strong></p>
+                    <p>Opening times:</p>
+                    <p>Mon-Fri: 8am - 6pm</p>
+                    <p>Sat: 9am - 1pm</p>
+                    <p>Sun: Closed</p>
+                    <a href="#">Request a callback</a>
+                    <a href="#">Request a quote</a>
+                    <a href="#">Ask a question</a>
+                </div>
+            </div>
+        </div>
+    
+      <!-- JavaScript to toggle side menu and overlay -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlayy = document.getElementById('overlayy');
+    const closeNav = document.getElementById('closeNav');
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+
+    // Toggle side menu and overlay
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+      overlayy.classList.toggle('active');
+    });
+
+    // Close side menu and overlay when clicking on the overlay
+    overlayy.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlayy.classList.remove('active');
+    });
+    closeNav.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlayy.classList.remove('active');
+    });
+     // Toggle dropdown for Destinations
+     dropdownBtn.addEventListener('click', function () {
+      this.classList.toggle('active');
+    });
+  </script>
+</div>
+
+  <!-- Scripts for Bootstrap (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Scoped container for independent styling -->
+   <div class="slider-scoped">
+        
+    <!-- Import Font Awesome inside the scoped container -->
+    <style>
+        /* Import Font Awesome for this section only */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        /* Styles for the scoped slider container */
+        .slider-container {
+            width: auto;
+            height: 824px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin: auto;
+           
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #07081ae0 2%, #222550ad 25%, #22255086 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            transform: translate(-50%, -30%);
+            text-align: left;
+            z-index: 2;
+        }
+
+        .search-container h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #20b06b;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 15px;
+        }
+
+        .search-bar input {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            width: 300px;
+        }
+
+        .search-bar button {
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            background-color: #25ce7b;
+            color: #222550;
+            font-weight: bold;
+        }
+
+        .search-bar button:hover {
+            background-color: #20b06a;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            font-weight: 700;
+            color: #222550;
+        }
+
+        .quick-link {
+            background-color: #25ce7b;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .fas{
+          color: #222550;
+        }
+
+        .quick-link:hover {
+            background-color:#00ff7f;
+        }
+
+        .promotion-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #12142a85;
+            padding: 5px;
+            font-size: 1.1rem;
+            text-align: left;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .promotion-bar-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            flex-grow: 1;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .promotion-bar a {
+            color: #32CD32;
+            text-decoration: none;
+        }
+
+        .promotion-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-button {
+            background-color:#ffffff00;
+            color:#00ff7f;
+            border:#00b06b;
+            border-style:solid;
+            border-width: 2px;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-left: 33px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color:#00ff7f;
+            color: #003366;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .slider-container {
+            width: 100%;
+            height: 30rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin: auto;
+            
+           
+        }
+
+        .slides {
+            display: flex;
+            height: 30rem;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 30rem;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30rem;
+            background: linear-gradient(to right, #07081ae0 2%, #222550ad 25%, #22255086 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 100%);
+            z-index: 0;
+        }
+        .search-container {
+            position: absolute;
+            left: 50%;
+            margin-top: 15%;
+            transform: translate(-50%, -30%);
+            text-align: left;
+            z-index: 2;
+            height: 30rem;
+        }
+
+        .search-container h2 {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #20b06b;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 15px;
+        }
+
+        .search-bar input {
+            padding: 15px;
+            font-size: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            width: 12rem;
+            height: 1rem;
+        }
+
+        .search-bar button {
+            padding: 0.4rem 1rem;
+            font-size: 10px;
+            line-height: 1;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            background-color: #25ce7b;
+            color: #222550;
+            font-weight: bold;
+            width: 5rem;
+            height: 1.9rem;
+        }
+        .promotion-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #12142a85;
+            padding: 5px;
+            font-size: 10px;
+            text-align: left;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            height: 2rem;
+        }
+
+        .promotion-bar-content {
+            display: flex;
+            align-items: center;
+            max-width: 95%;
+            margin: 0 auto;
+            padding-left: 0rem;
+            flex-grow: 1;
+            font-family: 'Work Sans', sans-serif;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow content */
+            text-overflow: ellipsis; /* Add ellipsis when content overflows */
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .nav-button {
+            display: none;
+        }
+
+        .promotion-bar a {
+            color: #32CD32;
+            text-decoration: none;
+            align-items: center;
+        }
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            font-weight: 700;
+            color: #222550;
+        }
+
+        .quick-link {
+            background-color: #25ce7b;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            height: 2.5rem;
+            font-size: 10px;
+        }
+        .fas{
+          color: #222550;
+        }
+        }
+    </style>
+
+    <!-- Slider Section -->
+    <div class="slider-container">
+        <div class="slides" id="slides">
+            <div class="slide">
+                <img src="images/cullinan_main.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="images/palacio.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="images/grand_hyatt_main.jpg" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- Gradient overlay -->
+        <div class="gradient-overlay"></div>
+
+        <!-- Search bar overlay -->
+        <div class="search-container">
+            <h2>Offers</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Where do you want to tee off?">
+                <button type="button" onclick="search()">LET'S GO!</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    // Function to handle search action
+    function search() {
+        const query = document.getElementById('search-input').value.trim();
+        if (query !== '') {
+            // Redirect to a search results page
+            window.location.href = `/search?query=${encodeURIComponent(query)}`;
+        }
+    }
+
+    // Function to show the next slide
+    function nextSlide() {
+        const slides = document.getElementById('slides');
+        const totalSlides = slides.children.length;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Function to show the previous slide
+    function prevSlide() {
+        const slides = document.getElementById('slides');
+        const totalSlides = slides.children.length;
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
+
+<!-- Encapsulated Container -->
+<div class="golf-breaks-wrapper fade-in-section">
+  <!-- Encapsulated Styles -->
+  <style>
+    .golf-breaks-wrapper {
+        background: linear-gradient(132deg, #222550 0%, #25ce7b 100%);
+        color: white;
+        padding: 40px 20px;
+        font-family: 'Work Sans', sans-serif;
+        max-width: 1800px;
+        margin: auto;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper {
+        background: linear-gradient(132deg, #222550 0%, #25ce7b 100%);
+        color: white;
+        padding: 2rem 0rem;
+        font-family: 'Work Sans', sans-serif;
+        max-width: 100%;
+        margin: 0rem;
+    }
+
+    }
+
+    .golf-breaks-wrapper h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+    }
+
+    /* Tabs styling - default state as text */
+    .golf-breaks-wrapper .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .tabs {
+        display: flex;
+        width: 85%;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        font-size: 10px;
+        margin-left: 1.7rem;
+    }
+    }
+
+    .golf-breaks-wrapper .tab {
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: underline;
+        transition: all 0.3s ease-in-out;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .tab {
+        color: #fff;
+        padding: 10px 2px;
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: bold;
+        text-decoration: underline;
+        transition: all 0.3s ease-in-out;
+        line-height: 0.7rem;
+        text-align: center;
+    }
+    }
+
+    /* Active Tab - button style */
+    .golf-breaks-wrapper .tab.active {
+        background-color: #fff;
+        color: #003366;
+        border-radius: 5px;
+        text-decoration: none;
+        height: 4rem;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .tab.active {
+        background-color: #fff;
+        color: #003366;
+        border-radius: 5px;
+        text-decoration: none;
+        height: 2.5rem;
+    }
+    }
+
+    .golf-breaks-wrapper .tab:hover {
+        text-decoration: none;
+    }
+
+    /* Cards Container - 2 by 4 Layout */
+    .golf-breaks-wrapper .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 57px; /* Gap between cards */
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 0.7rem; /* Gap between cards */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    }
+
+    /* Card */
+    .golf-breaks-wrapper .card {
+        background-color: #fff;
+        color: #003366;
+        width: 100%; 
+        border-radius: 10px;
+       /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+        padding: 20px;
+        position: relative;
+        background: #fff;
+        backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.733);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+    .card:hover {
+  border-radius: 12px;
+  background-color: #fff;
+  scale: 1;
+  box-shadow: 0px 3px 187.5px 7.5px rgba(0, 0, 0, 0.4);
+}
+
+    
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .card {
+        background-color: #fff;
+        color: #003366;
+        width: 100%; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem;
+        position: relative;
+        font-size: 12px;
+    }
+    }
+
+    /* Image in Card */
+    .golf-breaks-wrapper .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover; 
+        border-radius: 5px;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .card img {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover; 
+        border-radius: 5px;
+    }
+    }
+
+    .golf-breaks-wrapper .card h3 {
+        margin-top: 10px;
+        color: #00214d;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .card h3 {
+        margin-top: 0.5rem;
+        color: #00214d;
+        font-size: 14px;
+        text-align: left;
+    }
+    }
+
+    .golf-breaks-wrapper .card p {
+        margin-bottom: 10px;
+    }
+
+    /* Card Buttons */
+    .golf-breaks-wrapper .card-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .golf-breaks-wrapper .learn-more-btn,
+    .golf-breaks-wrapper .enquire-now-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        width: 48%;
+        transition: all 0.3s ease-in-out;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .learn-more-btn,
+    .golf-breaks-wrapper .enquire-now-btn {
+        padding: 5px 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        display:inline-block;
+        text-align: center;
+        width: 48%;
+        transition: all 0.3s ease-in-out;
+    }
+    }
+
+    .golf-breaks-wrapper .learn-more-btn {
+        background-color: #003366;
+        color: #fff;
+    }
+
+    .golf-breaks-wrapper .learn-more-btn:hover {
+        background-color:#0056b3;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .golf-breaks-wrapper .enquire-now-btn {
+        background-color:#00b06b;
+        color: #fff;
+    }
+
+    .golf-breaks-wrapper .enquire-now-btn:hover {
+        background-color:#00ff7f;
+    }
+
+    /* Enquiry form modal */
+    .golf-breaks-wrapper .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+    }
+    }
+
+    .golf-breaks-wrapper .modal-content {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        width: 500px;
+        max-width: 90%;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 95%;
+        max-width: 95%;
+        margin: auto;
+        height: 40rem;
+    }
+    }
+
+    .golf-breaks-wrapper .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    }
+
+    .golf-breaks-wrapper .modal-header h3 {
+        margin: 0;
+        color: #00214d;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .modal-header h3 {
+        margin: 0;
+        color: #00214d;
+        font-size: 14px;
+        text-wrap: nowrap;
+        text-align: center;
+    }
+    }
+
+    .golf-breaks-wrapper .close-btn {
+        cursor: pointer;
+        font-size: 2.0rem;
+        color: #00214d;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .close-btn {
+        cursor: pointer;
+        font-size: 1.0rem;
+        color: #00214d;
+        margin-top: auto;
+        margin-left: 1rem;
+    }
+    }
+
+    .golf-breaks-wrapper .form-group {
+        margin-bottom: 15px;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .form-group {
+        margin-bottom: 0px;
+    }
+    }
+
+    .golf-breaks-wrapper .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #00214d;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .form-group label {
+        display: block;
+        margin-bottom: 0px;
+        color: #00214d;
+        font-size: 10px;
+    }
+    }
+
+    .golf-breaks-wrapper .form-group input,
+    .golf-breaks-wrapper .form-group select,
+    .golf-breaks-wrapper .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .form-group input,
+    .golf-breaks-wrapper .form-group select,
+    .golf-breaks-wrapper .form-group textarea {
+        width: 100%;
+        height: 50%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 10px;
+    }
+    }
+
+    .golf-breaks-wrapper .form-group button {
+        background-color:#00b06b;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .form-group button {
+        background-color:#00b06b;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 2.5rem;
+        margin-left: 2.7rem;
+    }
+    }
+
+    .golf-breaks-wrapper .form-group button:hover {
+        background-color:#00ff7f;
+    }
+
+    .golf-breaks-wrapper .view-more-btn {
+        display: block;
+        text-align: center;
+        margin: 30px auto;
+        background-color:#003366;
+        color:white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+    }
+    @media (max-width: 768px){
+        .golf-breaks-wrapper .view-more-btn {
+        display: block;
+        text-align: center;
+        margin-top: 3rem;
+        background-color:#003366;
+        color:white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+    }
+    }
+
+    .golf-breaks-wrapper .view-more-btn:hover {
+        background-color:#0056b3;
+        transition: all 0.3s ease-in-out;
+    }
+    .fade-in-section .card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in-section .card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Success Modal */
+.success-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+}
+
+.success-modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-modal h2 {
+    color: #00b06b;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 20px;
+}
+
+.success-modal p {
+    font-family: 'Work Sans', sans-serif;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.success-modal button {
+    background-color: #00b06b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.success-modal button:hover {
+    background-color: #00ff7f;
+}
+
+.close-success-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+.cards-container .package-dates {
+      background-color: #222550;
+      color: #fff;
+      font-weight: 700;
+      padding: 0 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: .15s;
+    }
+    </style>
+  
+    <!-- Main Golf Breaks Container -->
+    <h2>Golf Holiday Offers</h2>
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active">All Inclusive</div>
+        <div class="tab">UK & Ireland</div>
+        <div class="tab">Long Haul</div>
+        <div class="tab">Last Minute</div>
+        <div class="tab">Luxury</div>
+        <div class="tab">Groups</div>
+        <div class="tab">Tuition Trips</div>
+    </div>
+  
+    <!-- Cards Container -->
+    <div class="cards-container">
+        <div class="card">
+          <a href="https://www.golf-escapes.com/hotel/aldwark-manor-golf-spa-hotel/">1 Aug 2023 <span>to</span> 31 Oct 2024</a>
+            <img src="[[*golfcard1]]" alt="Ambre Resort">
+            <h3>Ambre (Sunlife Resort)</h3>
+            <p><strong>7 Nights</strong> | From £1109.00</p>
+            <p>Location: Mauritius</p>
+            <p><i class="fas fa-star"></i> All Inclusive</p>
+            <p><i class="fas fa-shuttle-van"></i> Free Golf Course Shuttle Included</p>
+            <p><i class="fas fa-golf-ball"></i> Unlimited Golf Included</p>
+            <div class="card-buttons">
+                <div class="learn-more-btn">Learn More</div>
+                <div class="enquire-now-btn" onclick="openModal()">Enquire Now</div>
+            </div>
+        </div>
+
+      <div class="card">
+        <img src="images/denia marriott.jpg" alt="Ambre Resort">
+        <h3>Ambre (Sunlife Resort)</h3>
+        <p><strong>7 Nights</strong> | From £1109.00</p>
+        <p>Location: Mauritius</p>
+        <p><i class="fas fa-star"></i> All Inclusive</p>
+        <p><i class="fas fa-shuttle-van"></i> Free Golf Course Shuttle Included</p>
+        <p><i class="fas fa-golf-ball"></i> Unlimited Golf Included</p>
+        <div class="card-buttons">
+            <div class="learn-more-btn">Learn More</div>
+            <div class="enquire-now-btn" onclick="openModal()">Enquire Now</div>
+        </div>
+    </div>
+
+    <div class="card">
+      <img src="images/grand hyatt.jpg" alt="Ambre Resort">
+      <h3>Ambre (Sunlife Resort)</h3>
+      <p><strong>7 Nights</strong> | From £1109.00</p>
+      <p>Location: Mauritius</p>
+      <p><i class="fas fa-star"></i> All Inclusive</p>
+      <p><i class="fas fa-shuttle-van"></i> Free Golf Course Shuttle Included</p>
+      <p><i class="fas fa-golf-ball"></i> Unlimited Golf Included</p>
+      <div class="card-buttons">
+          <div class="learn-more-btn">Learn More</div>
+          <div class="enquire-now-btn" onclick="openModal()">Enquire Now</div>
+      </div>
+  </div>
+
+      <div class="card">
+          <img src="images/du golf rotana.jpg" alt="Sirene Belek Hotel">
+          <h3>Sirene Belek Hotel</h3>
+          <p><strong>7 Nights</strong> | From £779.00</p>
+          <p>Location: Turkey</p>
+          <p><i class="fas fa-star"></i> All Inclusive</p>
+          <p><i class="fas fa-bus"></i> Airport Transfers Included</p>
+          <p><i class="fas fa-golf-ball"></i> Unlimited Golf Included</p>
+          <div class="card-buttons">
+              <div class="learn-more-btn">Learn More</div>
+              <div class="enquire-now-btn" onclick="openModal()">Enquire Now</div>
+          </div>
+      </div>
+  </div>
+
+  <a href="#" class="view-more-btn">View More Offers</a>
+
+<!-- Enquiry Form Modal -->
+<div class="modal" id="enquiryModal">
+    <form id="enquiryForm" action="sendEnquiry.php" method="POST">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Enquire about this package</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="form-group">
+                <label for="travel-date">Travel Date</label>
+                <input type="date" id="travel-date" name="travel_date" required>
+            </div>
+            <div class="form-group">
+                <label for="party-size">Party Size</label>
+                <select id="party-size" name="party_size" required>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="requirements">Requirements</label>
+                <textarea id="requirements" name="requirements" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Send Enquiry</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<!-- Success Modal -->
+<div class="success-modal" id="successModal">
+    <div class="success-modal-content">
+        <span class="close-success-btn" id="closeSuccessModal">&times;</span>
+        <h2>Enquiry Sent Successfully!</h2>
+        <p>Thank you for your enquiry. Our team will get back to you shortly.</p>
+        <button id="closeSuccessBtn">Close</button>
+    </div>
+</div>
+
+<script>
+    // Data for each tab category
+    const golfBreaksData = {
+      "All Inclusive": [
+        {
+          img: "images/cullinan gold.jpg",
+          title: "Ambre (Sunlife Resort)",
+          nights: "7 Nights",
+          price: "From £1109.00",
+          location: "Mauritius",
+          features: [
+            { icon: "fas fa-star", text: "All Inclusive" },
+            { icon: "fas fa-shuttle-van", text: "Free Golf Course Shuttle Included" },
+            { icon: "fas fa-golf-ball", text: "Unlimited Golf Included" }
+          ]
+        },
+        {
+          img: "images/cullinan gold.jpg",
+          title: "Ambre (Sunlife Resort)",
+          nights: "7 Nights",
+          price: "From £1109.00",
+          location: "Mauritius",
+          features: [
+            { icon: "fas fa-star", text: "All Inclusive" },
+            { icon: "fas fa-shuttle-van", text: "Free Golf Course Shuttle Included" },
+            { icon: "fas fa-golf-ball", text: "Unlimited Golf Included" }
+          ]
+        },
+        {
+          img: "images/cullinan gold.jpg",
+          title: "Ambre (Sunlife Resort)",
+          nights: "7 Nights",
+          price: "From £1109.00",
+          location: "Mauritius",
+          features: [
+            { icon: "fas fa-star", text: "All Inclusive" },
+            { icon: "fas fa-shuttle-van", text: "Free Golf Course Shuttle Included" },
+            { icon: "fas fa-golf-ball", text: "Unlimited Golf Included" }
+          ]
+        },
+        {
+          img: "images/cullinan gold.jpg",
+          title: "Ambre (Sunlife Resort)",
+          nights: "7 Nights",
+          price: "From £1109.00",
+          location: "Mauritius",
+          features: [
+            { icon: "fas fa-star", text: "All Inclusive" },
+            { icon: "fas fa-shuttle-van", text: "Free Golf Course Shuttle Included" },
+            { icon: "fas fa-golf-ball", text: "Unlimited Golf Included" }
+          ]
+        },
+        // Add more cards as necessary for this category
+      ],
+      "UK & Ireland": [
+    {
+      img: "images/celtic manor.jpg",
+      title: "Celtic Manor Resort",
+      nights: "3 Nights",
+      price: "From £599.00",
+      location: "UK",
+      features: [
+        { icon: "fas fa-golf-ball", text: "Unlimited Golf" },
+        { icon: "fas fa-shuttle-van", text: "Free Shuttle to Courses" }
+      ]
+    },
+    {
+      img: "images/belfast golf.jpg",
+      title: "Belfast Golf Resort",
+      nights: "4 Nights",
+      price: "From £799.00",
+      location: "Ireland",
+      features: [
+        { icon: "fas fa-golf-ball", text: "Championship Courses" },
+        { icon: "fas fa-bus", text: "Airport Transfers Included" }
+      ]
+    }
+      ],
+    "Luxury": [
+    {
+      img: "images/grand hyatt.jpg",
+      title: "Grand Hyatt Resort",
+      nights: "7 Nights",
+      price: "From £1800.00",
+      location: "Dubai",
+      features: [
+        { icon: "fas fa-star", text: "5-Star Luxury" },
+        { icon: "fas fa-concierge-bell", text: "Personal Butler Service" },
+        { icon: "fas fa-golf-ball", text: "Unlimited Golf" }
+      ]
+    },
+    {
+      img: "images/ritz carlton.jpg",
+      title: "Ritz-Carlton Golf Resort",
+      nights: "5 Nights",
+      price: "From £2000.00",
+      location: "USA",
+      features: [
+        { icon: "fas fa-star", text: "Exclusive Membership Courses" },
+        { icon: "fas fa-spa", text: "Luxury Spa Access" }
+      ]
+    }
+  ],
+    "Last Minute": [
+    {
+      img: "images/grand hyatt.jpg",
+      title: "Grand Hyatt Resort",
+      nights: "7 Nights",
+      price: "From £1800.00",
+      location: "Dubai",
+      features: [
+        { icon: "fas fa-star", text: "5-Star Luxury" },
+        { icon: "fas fa-concierge-bell", text: "Personal Butler Service" },
+        { icon: "fas fa-golf-ball", text: "Unlimited Golf" }
+      ]
+    },
+    {
+      img: "images/ritz carlton.jpg",
+      title: "Ritz-Carlton Golf Resort",
+      nights: "5 Nights",
+      price: "From £2000.00",
+      location: "USA",
+      features: [
+        { icon: "fas fa-star", text: "Exclusive Membership Courses" },
+        { icon: "fas fa-spa", text: "Luxury Spa Access" }
+      ]
+    }
+  ],
+    "Groups": [
+    {
+      img: "images/grand hyatt.jpg",
+      title: "Grand Hyatt Resort",
+      nights: "7 Nights",
+      price: "From £1800.00",
+      location: "Dubai",
+      features: [
+        { icon: "fas fa-star", text: "5-Star Luxury" },
+        { icon: "fas fa-concierge-bell", text: "Personal Butler Service" },
+        { icon: "fas fa-golf-ball", text: "Unlimited Golf" }
+      ]
+    },
+    {
+      img: "images/ritz carlton.jpg",
+      title: "Ritz-Carlton Golf Resort",
+      nights: "5 Nights",
+      price: "From £2000.00",
+      location: "USA",
+      features: [
+        { icon: "fas fa-star", text: "Exclusive Membership Courses" },
+        { icon: "fas fa-spa", text: "Luxury Spa Access" }
+      ]
+    }
+  ],
+  "Long Haul": [
+    {
+      img: "images/grand hyatt.jpg",
+      title: "Grand Hyatt Resort",
+      nights: "7 Nights",
+      price: "From £1800.00",
+      location: "Dubai",
+      features: [
+        { icon: "fas fa-star", text: "5-Star Luxury" },
+        { icon: "fas fa-concierge-bell", text: "Personal Butler Service" },
+        { icon: "fas fa-golf-ball", text: "Unlimited Golf" }
+      ]
+    },
+    {
+      img: "images/ritz carlton.jpg",
+      title: "Ritz-Carlton Golf Resort",
+      nights: "5 Nights",
+      price: "From £2000.00",
+      location: "USA",
+      features: [
+        { icon: "fas fa-star", text: "Exclusive Membership Courses" },
+        { icon: "fas fa-spa", text: "Luxury Spa Access" }
+      ]
+    }
+  ],
+  "Tuition Trips": [
+    {
+      img: "images/grand hyatt.jpg",
+      title: "Grand Hyatt Resort",
+      nights: "7 Nights",
+      price: "From £1800.00",
+      location: "Dubai",
+      features: [
+        { icon: "fas fa-star", text: "5-Star Luxury" },
+        { icon: "fas fa-concierge-bell", text: "Personal Butler Service" },
+        { icon: "fas fa-golf-ball", text: "Unlimited Golf" }
+      ]
+    },
+    {
+      img: "images/ritz carlton.jpg",
+      title: "Ritz-Carlton Golf Resort",
+      nights: "5 Nights",
+      price: "From £2000.00",
+      location: "USA",
+      features: [
+        { icon: "fas fa-star", text: "Exclusive Membership Courses" },
+        { icon: "fas fa-spa", text: "Luxury Spa Access" }
+      ]
+    }
+  ],
+      // Other categories...
+    };
+    
+    // Function to generate the card HTML for each category
+    function generateCardsHTML(cards) {
+      return cards.map(card => `
+        <div class="card fade-in">
+          <img src="${card.img}" alt="${card.title}">
+          <h3>${card.title}</h3>
+          <p><strong>${card.nights}</strong> | ${card.price}</p>
+          <p>Location: ${card.location}</p>
+          ${card.features.map(feature => `<p><i class="${feature.icon}"></i> ${feature.text}</p>`).join('')}
+          <div class="card-buttons">
+            <div class="learn-more-btn">Learn More</div>
+            <div class="enquire-now-btn" onclick="openModal()">Enquire Now</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    // Function to apply fade-in animation for cards
+    function fadeInCards() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('active');
+        }, index * 100); // Staggered delay for a nice fade-in effect
+      });
+    }
+    
+    // Handle tab click
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs and add to the clicked one
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+    
+        // Get the tab name (text) and show corresponding cards
+        const tabName = this.innerText.trim();
+        const cardsContainer = document.querySelector('.cards-container');
+    
+        // Get corresponding cards data and update the cards container HTML
+        const selectedCards = golfBreaksData[tabName] || [];
+        cardsContainer.innerHTML = generateCardsHTML(selectedCards);
+    
+        // Trigger fade-in animation for the new cards
+        fadeInCards();
+      });
+    });
+    
+    // Trigger the display of "All Inclusive" cards on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const cardsContainer = document.querySelector('.cards-container');
+      
+      // Load the "All Inclusive" cards by default
+      const allInclusiveCards = golfBreaksData["All Inclusive"];
+      cardsContainer.innerHTML = generateCardsHTML(allInclusiveCards);
+    
+      // Trigger fade-in animation for the cards
+      fadeInCards();
+    });
+    
+    // Modal functionality for enquiry
+    function openModal() {
+      document.getElementById('enquiryModal').style.display = 'flex';
+    }
+    
+    function closeModal() {
+      document.getElementById('enquiryModal').style.display = 'none';
+    }
+    // Function to display success modal
+    function showSuccessModal() {
+    const successModal = document.getElementById('successModal');
+    successModal.style.display = 'flex'; // Show the success modal
+
+    // Close modal when clicking the close button or the "Close" button
+    document.getElementById('closeSuccessModal').addEventListener('click', closeSuccessModal);
+    document.getElementById('closeSuccessBtn').addEventListener('click', closeSuccessModal);
+}
+
+// Function to close success modal
+function closeSuccessModal() {
+    const successModal = document.getElementById('successModal');
+    successModal.style.display = 'none'; // Hide the modal
+}
+    // Trigger this function after form submission
+document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch('sendEnquiry.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        showSuccessModal(); // Show the success window after successful form submission
+    })
+    .catch(error => {
+        alert('Failed to send enquiry. Please try again.');
+    });
+});
+    </script>   
+
+<!-- Encapsulated Container -->
+<div class="why-choose-us-wrapper">
+  <!-- Encapsulated Styles -->
+  <style>
+      .why-choose-us-wrapper {
+          max-width: 1800px;
+          margin: auto;
+          padding: 60px 20px;
+          text-align: center;
+          background-color: #f9f9f9;
+      }
+      @media (max-width: 768px){
+        .why-choose-us-wrapper {
+          max-width: 100%;
+          margin: auto;
+          padding: 60px 20px;
+          text-align: center;
+          background-color: #f9f9f9;
+      }
+      }
+
+      .why-choose-us-wrapper h2 {
+          font-size: 2.5rem;
+          color: #003366;
+          margin-bottom: 50px;
+      }
+      @media (max-width: 768px){
+        .why-choose-us-wrapper h2 {
+          font-size: 28px;
+          color: #003366;
+          margin-bottom: 50px;
+          font-weight: 700;
+      }
+      }
+
+      .why-choose-us-wrapper .cards-container {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          flex-wrap: wrap;
+      }
+
+      .why-choose-us-wrapper .card {
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+          text-align: center;
+          max-width: 300px;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.6s ease-out;
+      }
+
+      .why-choose-us-wrapper .card img {
+          width: 60px;
+          margin-bottom: 20px;
+          margin: auto;
+      }
+
+      .why-choose-us-wrapper .card h3 {
+          font-size: 1.5rem;
+          color: #003366;
+          margin-bottom: 15px;
+      }
+
+      .why-choose-us-wrapper .card p {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 15px;
+      }
+
+      .why-choose-us-wrapper .card.active {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      /* Request Buttons */
+      .why-choose-us-wrapper .buttons-container {
+          margin-top: 40px;
+      }
+
+      .why-choose-us-wrapper .request-btn {
+          background-color:#003366;
+          color: white;
+          padding: 12px 30px;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-right: 15px;
+          transition: background-color 0.3s ease;
+          text-decoration: none;
+      }
+
+      .why-choose-us-wrapper .request-btn:last-child {
+          background-color:#00b06b;
+      }
+
+      .why-choose-us-wrapper .request-btn:hover {
+          background-color:#0056b3;
+      }
+
+      .why-choose-us-wrapper .request-btn:last-child:hover {
+          background-color:#00ff7f;
+      }
+      @media (max-width: 768px){
+        .why-choose-us-wrapper .buttons-container {
+          margin-top: 3rem;
+          padding-left: 1rem;
+      }
+
+      .why-choose-us-wrapper .request-btn {
+        display: block;
+          background-color:#003366;
+          color: white;
+          padding-top: 12px;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-right: 15px;
+          transition: background-color 0.3s ease;
+          text-decoration: none;
+      }
+
+      .why-choose-us-wrapper .request-btn:last-child {
+          background-color:#00b06b;
+          margin-top: 0.5rem;
+      }
+
+      .why-choose-us-wrapper .request-btn:hover {
+          background-color:#0056b3;
+      }
+
+      .why-choose-us-wrapper .request-btn:last-child:hover {
+          background-color:#00ff7f;
+      }
+      }
+  </style>
+
+  <h2>Why Choose Us</h2>
+
+  <!-- Cards -->
+  <div class="cards-container">
+      <div class="card">
+          <img src="icons/headset-solid(3).svg" alt="Safe Hands Icon">
+          <h3>24/7 Customer Support</h3>
+          <p>Trust is important, which is why we provide full financial protection and peace of mind on all payments. Fully backed by ATOL and ABTA.</p>
+      </div>
+
+      <div class="card">
+          <img src="icons/trophy-solid(2).svg" alt="Award Service Icon">
+          <h3>Tournaments</h3>
+          <p>Each of our travel specialists meets first-class industry standards and always goes the extra mile to provide the perfect escape for our clients.</p>
+      </div>
+
+      <div class="card">
+          <img src="icons/star-regular(1).svg" alt="Industry Knowledge Icon">
+          <h3>Exclusive Offers</h3>
+          <p>Our knowledge of the destinations is second to none, ensuring every golf escape is tailored to you. Want to add a twist to your golf break? We’ve got you.</p>
+      </div>
+  </div>
+
+  <!-- Request Buttons -->
+  <div class="buttons-container">
+      <a href="#" class="request-btn">REQUEST A QUOTE</a>
+      <a href="#" class="request-btn">REQUEST A CALL BACK</a>
+  </div>
+
+  <script>
+      // Fade-in effect when scrolling to the "Why Choose Us" section
+      window.addEventListener('scroll', function () {
+    const cards = document.querySelectorAll('.why-choose-us-wrapper .card');
+    const section = document.querySelector('.why-choose-us-wrapper');
+    const sectionPosition = section.getBoundingClientRect();
+    const screenHeight = window.innerHeight;
+
+    // Check if section is in view
+    if (sectionPosition.top < screenHeight && sectionPosition.bottom > 0) {
+        // Add fade-in class to each card when section is visible
+        cards.forEach((card) => {
+            card.classList.add('active');
+        });
+    } else {
+        // Remove fade-in class (reset) when section is out of view
+        cards.forEach((card) => {
+            card.classList.remove('active');
+        });
+    }
+});
+  </script>
+</div>
+
+<!-- Encapsulated Container for Top Golf Getaways -->
+<div class="top-golf-getaways">
+  <style>
+    /* Main wrapper */
+    .top-golf-getaways {
+      max-width: auto;
+      margin: auto;
+      padding: 60px 20px;
+      font-family: 'Work Sans', sans-serif;
+      text-align: center;
+      background-color: #ffffff;
+      justify-content: center;
+    }
+    @media (max-width: 768px){
+        .top-golf-getaways {
+      max-width: 100%;
+      margin: auto;
+      padding: 40px 20px;
+      font-family: 'Work Sans', sans-serif;
+      text-align: center;
+      background-color: #ffffff;
+      height: auto;
+    }
+    }
+
+    /* Section title */
+    .top-golf-getaways h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+    @media (max-width: 768px){
+        .top-golf-getaways h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+    }
+
+    /* Section subtitle */
+    .top-golf-getaways p.subtitle {
+      font-size: 1.2rem;
+      color: #747373;
+      margin-bottom: 50px;
+    }
+
+    /* Cards container */
+    .top-golf-getaways .cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  justify-content: center;
+}
+@media (max-width: 768px){
+    .top-golf-getaways .cards-container {
+  display: block;
+  gap: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+}
+}
+
+    /* Individual card */
+    .top-golf-getaways .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      opacity: 0; /* Initially invisible */
+      transform: translateY(50px); /* Move down initially */
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Transition properties */
+    }
+    @media (max-width: 768px){
+        .top-golf-getaways .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      opacity: 0; /* Initially invisible */
+      transform: translateY(50px); /* Move down initially */
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Transition properties */
+      padding-top: 1rem;
+    }
+    }
+
+    /* Make card visible when scrolled into view */
+    .top-golf-getaways .fade-in {
+      opacity: 1; /* Fade in */
+      transform: translateY(0); /* Reset position */
+    }
+
+    /* Card images */
+    .top-golf-getaways .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Card hover effect */
+    .top-golf-getaways .card:hover .overlayyy {
+      opacity: 1;
+    }
+
+    /* Gradient overlay on hover */
+    .top-golf-getaways .overlayyy {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0), #021b35);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 5px;
+      padding-top: 1rem;
+    }
+
+    /* Card text on hover */
+    .top-golf-getaways .overlayyy h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: white;
+    }
+    @media (max-width: 768px){
+        .top-golf-getaways .overlayyy h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 14px;
+      color: white;
+    }
+    }
+
+    /* Explore destinations button */
+    .top-golf-getaways .explore-btn {
+      background-color:#00b06b;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    @media (max-width: 768px){
+        .top-golf-getaways .explore-btn {
+      background-color:#00b06b;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      margin-top: 1rem;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    }
+
+    .top-golf-getaways .explore-btn:hover {
+      background-color:#00ff7f;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- Main content -->
+  <h2>Top Golf Getaways</h2>
+  <p class="subtitle">
+    Secure some of the best handpicked deals for you right now on the market.
+    Choose your favourite destination, ideal golf resort, or any other feature.
+  </p>
+
+  <!-- Cards Container -->
+  <div class="cards-container">
+    <div class="card">
+      <img src="images/fRANCE.jpg" alt="Abu Dhabi">
+      <div class="overlayyy">
+        <h3>Abu Dhabi</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/UAE.jpg" alt="Belgium">
+      <div class="overlayyy">
+        <h3>Belgium</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/Turkey.jpg" alt="Bulgaria">
+      <div class="overlayyy">
+        <h3>Bulgaria</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/United Kingdom.jpg" alt="Canary Islands">
+      <div class="overlayyy">
+        <h3>Canary Islands</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/spain.jpg" alt="Caribbean">
+      <div class="overlayyy">
+        <h3>Caribbean</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/portugal.jpg" alt="Caribbean">
+      <div class="overlayyy">
+        <h3>Caribbean</h3>
+      </div>
+    </div>
+</div>
+
+  <!-- Explore destinations button -->
+  <a href="#" class="explore-btn">Explore Destinations</a>
+
+<script>
+  // Scroll-triggered fade-in for cards
+  const cards = document.querySelectorAll('.top-golf-getaways .card');
+
+  function checkCardsInView() {
+    const triggerPoint = window.innerHeight * 0.9;
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+
+      if (cardTop < triggerPoint) {
+        card.classList.add('fade-in');
+      } else {
+        card.classList.remove('fade-in'); // Allow resetting the fade-in effect
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkCardsInView);
+</script>
+</div>
+
+
+<!-- Contact Us Container -->
+<div class="contact-us-wrapper">
+  <!-- Encapsulated Styles -->
+  <style>
+      .contact-us-wrapper {
+          display: flex;
+          justify-content: space-between;
+          background-color: #f8f8f8;
+          padding: 40px 20px;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 1800px;
+          margin: auto;
+          gap: 30px;
+      }
+      @media (max-width: 768px){
+        .contact-us-wrapper {
+          display: grid;
+          justify-content: space-between;
+          background-color: #f8f8f8;
+          padding: 10px 10px;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 100%;
+          margin: auto;
+          gap: 30px;
+      }
+      }
+
+      /* Left Side Contact Info */
+      .contact-info {
+          width: 40%;
+          color: #333;
+      }
+      @media (max-width: 768px){
+        .contact-info {
+          width: 100%;
+          color: #333;
+      }
+      }
+
+      .contact-info h3 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+          color: #003366;
+      }
+
+      .contact-info p {
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+      }
+
+      .contact-info a {
+          color: #007bff;
+          text-decoration: none;
+      }
+
+      .contact-info a:hover {
+          text-decoration: underline;
+      }
+
+      /* Google Map Embed */
+      .contact-info iframe {
+          width: 100%;
+          height: 200px;
+          border: 0;
+      }
+
+      /* Right Side Contact Form */
+      .contact-form {
+          width: 55%;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+      }
+      @media (max-width: 768px){
+        .contact-form {
+          width: 100%;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+      }
+      }
+
+      .contact-form h3 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+          color: #003366;
+      }
+
+      .contact-form .form-group {
+          margin-bottom: 15px;
+          color: #003366;
+      }
+
+      .contact-form .form-group label {
+          display: block;
+          margin-bottom: 5px;
+          color: #003366;
+      }
+
+      .contact-form .form-group input,
+      .contact-form .form-group textarea,
+      .contact-form .form-group select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 1rem;
+      }
+
+      .contact-form .form-group input[type="checkbox"] {
+          width: auto;
+          margin-right: 5px;
+      }
+
+      .contact-form .form-group .submit-btn {
+          background-color:#00b06b;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1.1rem;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .contact-form .form-group .submit-btn:hover {
+          background-color:#00ff7f;
+      }
+  </style>
+
+  <!-- Left Side Contact Information -->
+  <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p>Don't worry — this form doesn't go to a cyberspace black hole. A real person from our team will read your message and respond within two business days.</p>
+
+      <p><strong>Phone:</strong> <a href="tel:01342 811 777">+44 020 8194 0114</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@par5escapes.com">info@par5escapes.com</a></p>
+      <p><strong>Address:</strong><br>26 – 28 Hammersmith Grove · W6 7HA / London, United Kingdom</p>
+
+      <!-- Google Map Embed -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24107.356494978463!2d-0.07762180900333788!3d51.13307797561207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875f02a464d9a1b%3A0xd4f129fffa497b89!2sGolf%20Escapes!5e0!3m2!1sen!2suk!4v1683757281303!5m2!1sen!2suk" allowfullscreen=""></iframe>
+  </div>
+
+  <!-- Right Side Contact Form -->
+  <div class="contact-form">
+      <h3>Contact Form</h3>
+      <form action="mailto:salesmanager@golf-escapes.com" method="post" enctype="text/plain">
+          <div class="form-group">
+              <label for="first-name">First Name *</label>
+              <input type="text" id="first-name" name="First Name" required>
+          </div>
+
+          <div class="form-group">
+              <label for="surname">Surname *</label>
+              <input type="text" id="surname" name="Surname" required>
+          </div>
+
+          <div class="form-group">
+              <label for="email">Contact Email *</label>
+              <input type="email" id="email" name="Email" required>
+          </div>
+
+          <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="Phone" required>
+          </div>
+
+          <div class="form-group">
+              <label for="help">How can we help? *</label>
+              <textarea id="help" name="How can we help?" rows="4" required></textarea>
+          </div>
+
+          <div class="form-group">
+              <label>How did you find us? *</label>
+              <div>
+                  <input type="checkbox" name="Find Us" value="Google"> Google<br>
+                  <input type="checkbox" name="Find Us" value="Referral"> Referral<br>
+                  <input type="checkbox" name="Find Us" value="Facebook Advertising"> Facebook Advertising<br>
+                  <input type="checkbox" name="Find Us" value="Social Media"> Social Media<br>
+                  <input type="checkbox" name="Find Us" value="Newsletter"> Newsletter<br>
+                  <input type="checkbox" name="Find Us" value="Other"> Other
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="other-method">If you ticked "Other" please let us know how did you find us:</label>
+              <input type="text" id="other-method" name="Other Method">
+          </div>
+
+          <div class="form-group">
+              <input type="checkbox" id="subscribe" name="Subscribe"> Subscribe to our newsletter
+          </div>
+
+          <div class="form-group">
+              <button type="submit" class="submit-btn">Submit</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+ <!-- Encapsulated Footer Container -->
+<div class="encapsulated-footer">
+  <style>
+      /* Encapsulated Footer Wrapper */
+      .encapsulated-footer {
+          padding: 40px 20px;
+          color: #21294b;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 1800px;
+          margin: auto;
+          background-color: #21294b;
+      }
+      @media (max-width: 768px){
+        .encapsulated-footer {
+          padding: 40px 20px;
+          color: #21294b;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 100%;
+          margin: auto;
+          background-color: #21294b;
+      }
+      }
+
+      /* Content Container with Padding */
+      .encapsulated-footer .footer-content {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding: 0 40px; /* Left and right padding */
+      }
+      @media (max-width: 768px){
+        .encapsulated-footer .footer-content {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding: 0;
+      }
+      }
+
+      /* Left Section: Opening Times & Contact */
+      .encapsulated-footer .footer-left {
+          width: 40%;
+      }
+
+      .encapsulated-footer h3 {
+          font-size: 1.6rem;
+          margin-bottom: 15px;
+          color: #fff;
+      }
+
+      .encapsulated-footer p {
+          font-size: 1rem;
+          margin-bottom: 8px;
+          color: #ccc;
+      }
+
+      .encapsulated-footer a {
+          color: #00ff7f;
+          text-decoration: none;
+      }
+
+      .encapsulated-footer a:hover {
+          text-decoration: underline;
+      }
+
+      /* Right Section: Address & Registration Info */
+      .encapsulated-footer .footer-right {
+          width: 40%;
+      }
+
+      .encapsulated-footer .footer-right p {
+          margin-bottom: 5px;
+      }
+
+      .encapsulated-footer .footer-right strong {
+          color: #00ff7f;
+      }
+
+      /* Footer Bottom Links and Social Icons */
+      .encapsulated-footer .footer-bottom {
+          text-align: center;
+          margin-top: 30px;
+          padding: 0 40px; /* Adding padding for consistency */
+      }
+
+      .encapsulated-footer .footer-links {
+          margin-bottom: 15px;
+      }
+      @media (max-width: 768px){
+        .encapsulated-footer .footer-links {
+          margin-bottom: 15px;
+          text-align: center;
+          display: inline-flex;
+      }
+      }
+
+      .encapsulated-footer .footer-links a {
+          margin: 0 15px;
+          color: #00ff7f;
+          text-decoration: none;
+          font-size: 1rem;
+      }
+
+      .encapsulated-footer .footer-links a:hover {
+          text-decoration: underline;
+      }
+
+      /* Social Icons */
+      .encapsulated-footer .social-icons {
+          margin-top: 10px;
+      }
+
+      .encapsulated-footer .social-icons a {
+          margin: 0 10px;
+          display: inline-block;
+      }
+
+      .encapsulated-footer .social-icons img {
+          width: 30px;
+          height: 30px;
+      }
+
+      /* Footer Bottom Green Bar */
+      .footer-green-bar {
+          background-color: #00b06b;
+          padding: 20px;
+          color: #fff;
+          text-align: center;
+          font-size: 0.9rem;
+          padding: 0 40px;
+      }
+
+      /* Footer Bottom Legal Text */
+      .encapsulated-footer .footer-legal {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 0.9rem;
+          color: #ccc;
+      }
+  </style>
+
+  <!-- Footer Content -->
+  <div class="footer-content">
+      <!-- Left Section -->
+      <div class="footer-left">
+          <img src="images/par5logo_h.png" alt="Par5Escapes Logo" width="100rem">
+          <br><br>
+          <p><strong>Opening times:</strong></p>
+          <p>Mon-Fri: 8am - 6pm</p>
+          <p>Saturday: 9am - 1pm</p>
+          <p>Sunday: Closed</p>
+          <p><strong>Phone:</strong> <a href="tel:+44 020 8194 0114">+44 020 8194 0114</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@par5escapes.com">info@par5escapes.com</a></p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="footer-right">
+          <p><strong>Address:</strong></p>
+          <p>26 – 28 Hammersmith Grove · W6 7HA / London, United Kingdom</p>
+          <p>Par5Escapes is a trading name of <strong>The Sport & Travel Group Ltd</strong></p>
+          <p>Company Registration Number: REDACTED</p>
+          <p>VAT Number: REDACTED</p>
+      </div>
+  </div>
+
+  <!-- Footer Bottom Links -->
+  <div class="footer-bottom">
+      <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Contact Us</a>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+          <a href="#"><img src="icons/square-facebook-brands-solid.svg" alt="LinkedIn"></a>
+          <a href="#"><img src="icons/square-instagram-brands-solid.svg" alt="Instagram"></a>
+          <a href="#"><img src="icons/square-whatsapp-brands-solid.svg" alt="Facebook"></a>
+          <br><br>
+      </div>
+  </div>
+
+  <!-- Green Bar at Bottom -->
+  <div class="footer-green-bar">
+      © 2024 Par5Escapes — All rights reserved.
+  </div>
+</div>
+</body>
+</html>

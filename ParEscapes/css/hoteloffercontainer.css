@@ -1,0 +1,161 @@
+/* Container Styling */
+.offer-container {
+    width: 50%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Top Labels */
+.offer-labels {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.offer-label {
+    background-color: #00b06b;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Title and Date Input */
+.top-picks {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.date-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.arrival-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e6f0f7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.arrival-date input {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Offer Block */
+.offer-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.offer-block:first-of-type {
+    border-top: none;
+}
+
+.offer-title {
+    color: #ff4500;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.offer-details {
+    color: #666;
+}
+
+.price {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.breakpoints-info {
+    color: #666;
+    font-size: 12px;
+    text-align: right;
+}
+
+/* Breakpoints Section */
+.breakpoints {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.breakpoints img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.breakpoints span {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Buttons */
+.offer-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    /*display: flex;
+justify-content: space-between;
+margin-top: 10px;*/
+}
+
+.learn-more-btn, .enquire-now-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+/*border-radius: 5px;
+cursor: pointer;
+display: inline-block;
+text-align: center;
+width: 48%;
+transition: all 0.3s ease-in-out;*/
+}
+
+.learn-more-btn {
+    background-color: #003366;
+    color: #fff;
+}
+
+.enquire-now-btn {
+    background-color:#00b06b;
+    color: #fff;
+}
+.learn-more-btn:hover{
+    background-color:#0056b3;
+color: #fff;
+transition: all 0.3s ease-in-out;
+}
+.enquire-now-btn:hover{
+    background-color:#00ff7f;
+}

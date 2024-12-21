@@ -1,0 +1,100 @@
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 50rem; /* Fixed height for the slider */
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    height: 100%; /* Match slider-container */
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%; /* Match slider height */
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.search-container {
+    position: absolute;
+    margin-top: -25rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Ensure it's above the slider background */
+}
+
+.search-container h2{
+    font-size: 36px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.search-bar input {
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    border: 1.5px solid white;
+    border-radius: 16px 0 0 16px;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    color: white;
+    font-weight: 700;
+}
+
+.search-bar button {
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 16px 16px 0;
+    background-color: #25ce7b;
+    color: #222550;
+    font-weight: bold;
+    width: 25%;
+}
+.quick-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #222550;
+    width: 36rem;
+}
+
+.quick-link {
+    background-color: #25ce7b;
+    padding: 0.2rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.fas{
+  color: #222550;
+}
+
+.quick-link:hover {
+    background-color:#00ff7f;
+}
+
+.trustpilot-container {
+    position: relative; /* Prevent overlapping */
+    margin-top: 20px; /* Add spacing after the slider */
+    z-index: 2; /* Ensure it's above background but below search-container */
+}

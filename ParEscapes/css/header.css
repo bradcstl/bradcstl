@@ -1,0 +1,446 @@
+    .encapsulated-header-wrapper {
+      position: fixed; /* Make the header float on top */
+      top: 0;
+      left: 0;
+      width: 100%; /* Full width */
+      z-index: 100; /* Ensure it stays above other elements */
+      background:  linear-gradient(to right, rgba(0, 0, 0, 0.758) 0%, rgba(0, 0, 0, 0.393) 50%, rgba(255, 255, 255, 0.2) 100%); /* Smooth gradient */
+      backdrop-filter: blur(8px); /* Add blur effect for aesthetics */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional subtle border */
+      padding: 10px 0; /* Padding for aesthetics */
+      transition: all 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+
+
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper {
+        font-family: 'Work Sans', sans-serif;
+        position: sticky;
+        color: #fff;
+        font-size: 16px;
+        max-width: 100%;
+        margin: 0 auto; /* Center the header */
+        position: sticky;
+        top: 0; /* Stick at the top */
+        z-index: 999; /* Ensure it's above other elements */
+    }
+    }
+
+/* Top Bar */
+.encapsulated-header-wrapper .top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+}
+
+    .encapsulated-header-wrapper .top-bar a {
+        color: #fff;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    /* Main Nav Bar */
+    .encapsulated-header-wrapper .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+  }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .main-nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #1c2343;
+        padding: 15px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 999;
+        height: 5rem;
+    }
+
+    }
+
+    /* Logo */
+    .encapsulated-header-wrapper .logo img {
+        max-height: 42px;
+    }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .logo img {
+        max-height: 27px;
+        
+    }
+    }
+
+    /* Nav Links */
+    .encapsulated-header-wrapper .nav-links {
+        display: flex;
+        gap: 30px;
+        position: relative;
+    }
+
+    .encapsulated-header-wrapper .nav-links a {
+        color: #ffffff;
+        text-decoration: none;
+        position: relative;
+        font-size: 18px;
+        font-weight: 700;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .encapsulated-header-wrapper .nav-links a:hover {
+        color: #00ff7f;
+        transition: all 0.3s ease-in-out;
+    }
+
+      /* Green Line Animation */
+    .green-bar {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        height: 3px;
+        background-color: #00ff7f;
+        width: 0;
+        transition: width 0.5s ease;
+    }
+    .encapsulated-header-wrapper:hover .green-bar {
+        width: 100%;
+    }
+
+    /* Hover Effect for Destinations Tab */
+    .encapsulated-header-wrapper .nav-links a:hover {
+        background-color: #00ff7f;
+        color: #222550;
+        border-radius: 5px;
+        margin: auto;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        gap: 10px;
+    }
+      /* Dropdown for "Destinations" */
+    .encapsulated-header-wrapper .nav-links .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 51px;
+        left: 0;
+        background-color: #101425b2;
+        backdrop-filter: blur(4px);
+        padding: 44px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        width: 549px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .encapsulated-header-wrapper .nav-links a:hover + .dropdown-menu,
+    .encapsulated-header-wrapper .nav-links .dropdown-menu:hover {
+        display: grid;
+        opacity: 1;
+        visibility: visible;
+        /*top: 60px;*/
+    }
+
+    .encapsulated-header-wrapper .dropdown-menu a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .encapsulated-header-wrapper .dropdown-menu a:hover {
+        color: #1c2343;
+    }
+
+    /* Contact Us Button */
+    .encapsulated-header-wrapper .contact-us {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-right: 50px;
+    }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .contact-us {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-right: auto;
+    }
+    }
+
+    .encapsulated-header-wrapper .contact-us button {
+        background-color:#00b06b;
+        color: #222550;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 700;
+        transition: all 0.3s ease-in-out;
+    }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .contact-us button {
+        background-color:#00b06b;
+        color: #222550;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 700;
+        transition: all 0.3s ease-in-out;
+        
+    }
+    }
+
+    .encapsulated-header-wrapper .contact-us button:hover {
+        background-color:#00ff7f;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .encapsulated-header-wrapper .contact-us-dropdown {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 250px;
+        z-index: 999;
+        border-radius: 10px;
+    }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .contact-us-dropdown {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 10rem;
+        z-index: 999;
+        line-height: 0.9rem;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+    }
+
+    .encapsulated-header-wrapper .contact-us button:focus + .contact-us-dropdown,
+    .encapsulated-header-wrapper .contact-us button:active + .contact-us-dropdown {
+        display: block;
+    }
+
+    /* Hamburger Menu */
+    @media (max-width: 768px){
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.hamburger span:nth-child(2) {
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(3) {
+  transform-origin: bottom left;
+}
+}
+
+/* Side Menu */
+@media only screen and (max-width: 768px){
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 100%;
+  background-color: #1c2343;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+}
+
+.side-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+}
+
+/* Logo and Close Button Inside the Side Menu */
+.side-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.side-menu .logo img {
+  max-height: 20px;
+  margin-top: 30px;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  margin-top: 30px;
+}
+
+/* Dropdown within the side menu for Destinations */
+.dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate arrow when active */
+.dropdown-btn.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Content for Destinations */
+.dropdown-content {
+  /*display: none;*/
+  flex-direction: column;
+  padding-left: 20px;
+  gap: 10px;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  will-change: max-height, opacity;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Show dropdown content when active */
+.dropdown-btn.active + .dropdown-content {
+  /*display: flex;*/
+  flex-direction: column;
+  max-height: 500px; /* Adjust as needed */
+  opacity: 1;
+}
+
+/* Overlay */
+.overlayy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.overlayy.active {
+  opacity: 1;
+  visibility: visible;
+}
+}
+/* Make sure the side menu is hidden on screens larger than 768px */
+@media only screen and (min-width: 769px) {
+.side-menu {
+    display: none;
+}
+}
+
+    /* Opening Hours */
+    .encapsulated-header-wrapper .opening-hours {
+        margin-right: 20px;
+        text-align: right;
+        color: #222550;
+        font-weight: 700;
+    }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .opening-hours 
+        {
+        margin-right: 10px;
+        text-align: right;
+        color: #fff;
+        }
+    }
+
+    .encapsulated-header-wrapper .opening-hours p {
+        margin: 0;
+        font-size: 14px;
+        color: #222550;
+        font-weight: 700;
+    }
+    @media (max-width: 768px){
+        .encapsulated-header-wrapper .opening-hours p 
+        {
+        margin: 0;
+        font-size: 9.5px;
+        color: white;
+        line-height: 1rem;
+         }
+    }
+
+    .encapsulated-header-wrapper .opening-hours span {
+        color: #00ff7f;
+    }
+
+        /* Media Query for Mobile */
+    @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px; /* Align it to the right */
+        top: 30px; /* Align it with the main navbar */
+    }
+
+    .encapsulated-header-wrapper .nav-links {
+        display: none; /* Hide nav links on mobile */
+    }
+    }

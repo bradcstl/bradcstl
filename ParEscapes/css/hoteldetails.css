@@ -1,0 +1,137 @@
+/* HOTEL DETAILS CONTAINER START */
+/* Page container to align the two sections side by side */
+.page-container {
+    display: flex;
+    gap: 20px;
+    max-width: 95%;
+    margin: auto;
+    height: 35rem;
+  }
+  /* Styling for the tabs container */
+  /* Styling for the tabs container */
+  .popup {
+    width: 140%;
+    height: 90%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    /*border: 16px solid #ebf0f4;*/
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 16px 16px 48px #2e364330;
+  }
+  /* Label and tab controls */
+  label {
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #525d6f;
+    opacity: .4;
+    transition: opacity .4s ease-in-out;
+    display: block;
+    width: calc(100% - 48px);
+    text-align: left;
+    z-index: 100;
+    user-select: none;
+    margin-left: 1rem;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  label:hover,
+  input[type="radio"]:checked + label {
+    opacity: 1;
+  }
+  /* Tabs container */
+  .tabs {
+  width: 100%;
+  max-width: 15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  }
+  .marker {
+    position: absolute;
+    width: 75%;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    top: calc(-98.5%);
+    left: 0;
+    transition: transform .2s ease-in-out;
+  }
+  .marker #top,
+  .marker #bottom {
+    background-color: #00b06b;
+    /*box-shadow: 32px 32px 48px #2e364315;*/
+  }
+  .marker #top {
+    height: calc(49%);
+    margin-bottom: auto;
+    border-radius: 0 0 8px 0;
+  }
+  .marker #bottom {
+    height: calc(50% - 45px);
+    border-radius: 0 8px 0 0;
+  }
+  #tab1:checked ~ .marker { transform: translateY(calc(50% / 8 * 0)); }
+  #tab2:checked ~ .marker { transform: translateY(calc(50% / 8 * 1)); }
+  #tab3:checked ~ .marker { transform: translateY(calc(50% / 8 * 2)); }
+  #tab4:checked ~ .marker { transform: translateY(calc(50% / 8 * 3)); }
+  #tab5:checked ~ .marker { transform: translateY(calc(50% / 8 * 4)); }
+  #tab6:checked ~ .marker { transform: translateY(calc(50% / 8 * 5)); }
+  #tab7:checked ~ .marker { transform: translateY(calc(50% / 8 * 6)); }
+  #tab8:checked ~ .marker { transform: translateY(calc(50% / 8 * 7)); }
+  
+  /* Label styling */
+  .tabs label {
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #ffffff;
+    /*opacity: 0.6;*/
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .tabs label.active {
+    opacity: 1;
+    color: #333;
+  }
+  
+  /* Content area styling */
+  .tab-content-area {
+    width: 100%;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-left: 0rem;
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .tab-content-area.active {
+    display: block;
+    opacity: 1;
+    width: 44rem;
+    height: 45rem;
+    margin-top: 2rem;
+  }
+  /* Custom Font Styles for Content Area */
+  .tab-content-area h2 {
+    font-family: 'Work Sans', sans-serif; /* Use a different font for headings */
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .tab-content-area p {
+    font-family: 'Work Sans', sans-serif; /* Use a different font for paragraphs */
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  /* HOTEL DETAILS CONTAINER END */

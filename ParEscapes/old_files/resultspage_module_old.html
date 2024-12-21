@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121B25">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-navbutton-color" content="#121B25">
+  <meta name="msapplication-TileColor" content="#121B25">
+  <title>Par5Escapes</title>
+
+  <!-- Font Awesome & CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/searchresults.css">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url(images/search_background.png);
+      font-family: 'Work Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .search-filter-section {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .filter-container {
+      display: flex;
+      gap: 20px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-item {
+      position: relative;
+    }
+
+    .filter-item select,
+    .filter-item input[type="date"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .filter-container button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .filter-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .tour-packages-section {
+      margin: 20px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .golf-resort-card {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .golf-resort-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .golf-resort-card .card-content {
+      padding: 15px;
+    }
+
+    .golf-resort-card .hotel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .golf-resort-card .tags {
+      margin: 10px 0;
+    }
+
+    .golf-resort-card .tags .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+
+    .golf-resort-card .packages-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .golf-resort-card .packages-table th,
+    .golf-resort-card .packages-table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<!----------------------------------Search Filter Section------------------------------------->
+<div class="search-filter-section">
+  <div class="filter-container">
+    <!-- Destination Field -->
+    <div class="filter-item">
+      <select id="destination" aria-label="Choose your destination">
+        <option value="" disabled selected hidden>Choose your destination...</option>
+        <option value="Turkey">Turkey</option>
+        <option value="Spain">Spain</option>
+        <option value="Portugal">Portugal</option>
+        <option value="USA">USA</option>
+      </select>
+    </div>
+
+    <!-- Arrival Date Field -->
+    <div class="filter-item">
+      <input type="date" id="arrivalDate">
+    </div>
+
+    <!-- Search Button -->
+    <button onclick="searchTours()">Search</button>
+  </div>
+</div>
+
+<!----------------------------------Tour Packages Section------------------------------------->
+<div class="tour-packages-section" id="tour-packages">
+  <!-- Tour packages will be displayed here -->
+</div>
+
+<!------------------------ JavaScript Logic ---------------------->
+<script>
+  function searchTours() {
+    const destination = document.getElementById('destination').value;
+    const arrivalDate = document.getElementById('arrivalDate').value;
+
+    if (!destination || !arrivalDate) {
+      alert('Please select both a destination and an arrival date.');
+      return;
+    }
+
+    // Fetch data from the PHP backend
+    fetch('fetch_packages.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `location=${encodeURIComponent(destination)}&search_date=${encodeURIComponent(arrivalDate)}`,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const tourPackagesSection = document.getElementById('tour-packages');
+        tourPackagesSection.innerHTML = ''; // Clear existing results
+
+        if (data.length === 0) {
+          tourPackagesSection.innerHTML = '<p>No packages found for the selected criteria.</p>';
+          return;
+        }
+
+        data.forEach((pkg) => {
+          const card = `
+            <div class="golf-resort-card">
+              <img src="images/${pkg.main_image}" alt="${pkg.resort_name}">
+              <div class="card-content">
+                <div class="hotel-header">
+                  <h3>${pkg.resort_name}</h3>
+                  <div>${'★'.repeat(pkg.star_rating)}</div>
+                </div>
+                <div class="tags">
+                  <span class="tag">${pkg.tag1}</span>
+                  <span class="tag">${pkg.tag2}</span>
+                </div>
+                <p>${pkg.description}</p>
+                <table class="packages-table">
+                  <thead>
+                    <tr>
+                      <th>Nights</th>
+                      <th>Board</th>
+                      <th>Rounds</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${pkg.recommended_breaks
+                      .map(
+                        (breakData) => `
+                          <tr>
+                            <td>${breakData.nights}</td>
+                            <td>${breakData.board}</td>
+                            <td>${breakData.rounds}</td>
+                            <td>£${breakData.price}</td>
+                          </tr>`
+                      )
+                      .join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          `;
+          tourPackagesSection.innerHTML += card;
+        });
+      })
+      .catch((error) => {
+        console.error('Error fetching packages:', error);
+      });
+  }
+</script>
+
+</body>
+</html>

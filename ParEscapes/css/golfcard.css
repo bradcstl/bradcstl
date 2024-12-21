@@ -1,0 +1,104 @@
+.golf-card {
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header Section */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #25ce7b;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* Body Section */
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  /* Left Info Section */
+  .info-section {
+    flex: 1;
+  }
+  
+  .course-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+  }
+  
+  .features li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    color: #555;
+  }
+  
+  .features li i {
+    color: #25ce7b;
+    margin-right: 8px;
+  }
+  
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222550;
+  }
+  
+  .price span {
+    color: #25ce7b;
+    font-size: 18px;
+  }
+  
+  /* Right Photo Section */
+  .photo-section {
+    flex: 0 0 200px;
+    text-align: center;
+  }
+  
+  .photo-section img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .enquire-button {
+    background-color: #222550;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .enquire-button:hover {
+    background-color: #25ce7b;
+    color: #222550;
+  }

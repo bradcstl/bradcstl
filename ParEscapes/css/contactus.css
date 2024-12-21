@@ -1,0 +1,126 @@
+.contact-us-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    font-family: 'Work Sans', sans-serif;
+    max-width: 1800px;
+    margin: auto;
+    gap: 30px;
+}
+@media (max-width: 768px){
+  .contact-us-wrapper {
+    display: grid;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 10px 10px;
+    font-family: 'Work Sans', sans-serif;
+    max-width: 100%;
+    margin: auto;
+    gap: 30px;
+}
+}
+
+/* Left Side Contact Info */
+.contact-info {
+    width: 40%;
+    color: #333;
+}
+@media (max-width: 768px){
+  .contact-info {
+    width: 100%;
+    color: #333;
+}
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Google Map Embed */
+.contact-info iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+/* Right Side Contact Form */
+.contact-form {
+    width: 55%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+@media (max-width: 768px){
+  .contact-form {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+    color: #003366;
+}
+
+.contact-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea,
+.contact-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form .form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.contact-form .form-group .submit-btn {
+    background-color:#00b06b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form .form-group .submit-btn:hover {
+    background-color:#00ff7f;
+}

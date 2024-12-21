@@ -1,0 +1,1305 @@
+/* Encapsulated Header Wrapper */
+        .encapsulated-header-wrapper {
+            font-family: 'Work Sans', sans-serif;
+            color: #fff;
+            font-size: 16px;
+            max-width: 1800px;
+            margin: 0 auto; /* Center the header */
+            position: sticky;
+            top: 0; /* Stick at the top */
+            z-index: 999; /* Ensure it's above other elements */
+        }
+
+        /* Top Bar */
+        .encapsulated-header-wrapper .top-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #21294b;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .encapsulated-header-wrapper .top-bar a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        /* Main Nav Bar */
+        .encapsulated-header-wrapper .main-nav {
+            position: sticky;
+            top: 1.2rem;
+            width: 100%;
+            background-color: #1c2343;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* Logo */
+        .encapsulated-header-wrapper .logo img {
+            max-height: 42px;
+        }
+
+        /* Nav Links */
+        .encapsulated-header-wrapper .nav-links {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        .encapsulated-header-wrapper .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .nav-links a:hover {
+            color: #00ff7f;
+            transition: all 0.3s ease-in-out;
+        }
+
+          /* Green Line Animation */
+        .green-bar {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            height: 3px;
+            background-color: #00ff7f;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+        .encapsulated-header-wrapper:hover .green-bar {
+            width: 100%;
+        }
+
+        /* Hover Effect for Destinations Tab */
+        .encapsulated-header-wrapper .nav-links a:hover {
+            background-color: #00ff7f;
+            color: #222550;
+            border-radius: 5px;
+            margin: auto;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            gap: 10px;
+        }
+          /* Dropdown for "Destinations" */
+        .encapsulated-header-wrapper .nav-links .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 51px;
+            left: 0;
+            background-color: #1c2343;
+            padding: 44px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 549px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .nav-links a:hover + .dropdown-menu,
+        .encapsulated-header-wrapper .nav-links .dropdown-menu:hover {
+            display: grid;
+            opacity: 1;
+            visibility: visible;
+            /*top: 60px;*/
+        }
+
+        .encapsulated-header-wrapper .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .encapsulated-header-wrapper .dropdown-menu a:hover {
+            color: #1c2343;
+        }
+
+        /* Contact Us Button */
+        .encapsulated-header-wrapper .contact-us {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-right: 50px;
+        }
+
+        .encapsulated-header-wrapper .contact-us button {
+            background-color:#00b06b;
+            color: #222550;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .contact-us button:hover {
+            background-color:#00ff7f;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .encapsulated-header-wrapper .contact-us-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            z-index: 999;
+        }
+
+        .encapsulated-header-wrapper .contact-us button:focus + .contact-us-dropdown,
+        .encapsulated-header-wrapper .contact-us button:active + .contact-us-dropdown {
+            display: block;
+        }
+
+        /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger span:nth-child(1) {
+      transform-origin: top left;
+    }
+
+    .hamburger span:nth-child(2) {
+      transform-origin: center;
+    }
+
+    .hamburger span:nth-child(3) {
+      transform-origin: bottom left;
+    }
+
+    /* Side Menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #1c2343;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    .side-menu.active {
+      transform: translateX(0);
+    }
+
+    .side-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+      display: flex;
+    }
+
+    /* Logo and Close Button Inside the Side Menu */
+    .side-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .side-menu .logo img {
+      max-height: 40px;
+      margin-top: 30px;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* Dropdown within the side menu for Destinations */
+    .dropdown-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 21px;
+      font-weight: 400;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .dropdown-arrow {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Rotate arrow when active */
+    .dropdown-btn.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Content for Destinations */
+    .dropdown-content {
+      /*display: none;*/
+      flex-direction: column;
+      padding-left: 20px;
+      gap: 10px;
+      transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      will-change: max-height, opacity;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+    }
+
+    /* Show dropdown content when active */
+    .dropdown-btn.active + .dropdown-content {
+      /*display: flex;*/
+      flex-direction: column;
+      max-height: 500px; /* Adjust as needed */
+      opacity: 1;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      z-index: 999;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+        /* Opening Hours */
+        .encapsulated-header-wrapper .opening-hours {
+            margin-right: 20px;
+            text-align: right;
+            color: #fff;
+        }
+
+        .encapsulated-header-wrapper .opening-hours p {
+            margin: 0;
+            font-size: 14px;
+            color: white;
+        }
+
+        .encapsulated-header-wrapper .opening-hours span {
+            color: #00ff7f;
+        }
+
+    /* Import Font Awesome inside the scoped container */
+  
+        /* Import Font Awesome for this section only */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        /* Styles for the scoped slider container */
+        .slider-container {
+            width: 1800px;
+            height: 824px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin: auto;
+           
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #07081ae0 2%, #222550ad 25%, #22255086 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            transform: translate(-50%, -30%);
+            text-align: left;
+            z-index: 2;
+        }
+
+        .search-container h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #20b06b;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 15px;
+        }
+
+        .search-bar input {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            width: 300px;
+        }
+
+        .search-bar button {
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            background-color: #25ce7b;
+            color: #222550;
+            font-weight: bold;
+        }
+
+        .search-bar button:hover {
+            background-color: #20b06a;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            font-weight: 700;
+            color: #222550;
+        }
+
+        .quick-link {
+            background-color: #25ce7b;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .fas{
+          color: #222550;
+        }
+
+        .quick-link:hover {
+            background-color:#00ff7f;
+        }
+
+        .promotion-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #12142a85;
+            padding: 5px;
+            font-size: 1.1rem;
+            text-align: left;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .promotion-bar-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            flex-grow: 1;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .promotion-bar a {
+            color: #32CD32;
+            text-decoration: none;
+        }
+
+        .promotion-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-button {
+            background-color:#ffffff00;
+            color:#00ff7f;
+            border:#00b06b;
+            border-style:solid;
+            border-width: 2px;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-left: 33px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color:#00ff7f;
+            color: #003366;
+        }
+
+/* Encapsulated Container */
+
+  /* Encapsulated Styles */
+    .golf-breaks-wrapper {
+        background: linear-gradient(132deg, #222550 0%, #25ce7b 100%);
+        color: white;
+        padding: 40px 20px;
+        font-family: 'Work Sans', sans-serif;
+        max-width: 1800px;
+        margin: auto;
+    }
+
+    .golf-breaks-wrapper h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Tabs styling - default state as text */
+    .golf-breaks-wrapper .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        
+    }
+
+    .golf-breaks-wrapper .tab {
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: underline;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Active Tab - button style */
+    .golf-breaks-wrapper .tab.active {
+        background-color: #fff;
+        color: #003366;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .golf-breaks-wrapper .tab:hover {
+        text-decoration: none;
+    }
+
+    /* Cards Container - 2 by 4 Layout */
+    .golf-breaks-wrapper .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 57px; /* Gap between cards */
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    /* Card */
+    .golf-breaks-wrapper .card {
+        background-color: #fff;
+        color: #003366;
+        width: 100%; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        position: relative;
+    }
+
+    /* Image in Card */
+    .golf-breaks-wrapper .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover; 
+        border-radius: 5px;
+    }
+
+    .golf-breaks-wrapper .card h3 {
+        margin-top: 10px;
+        color: #00214d;
+    }
+
+    .golf-breaks-wrapper .card p {
+        margin-bottom: 10px;
+    }
+
+    /* Card Buttons */
+    .golf-breaks-wrapper .card-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .golf-breaks-wrapper .learn-more-btn,
+    .golf-breaks-wrapper .enquire-now-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        width: 48%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .golf-breaks-wrapper .learn-more-btn {
+        background-color: #003366;
+        color: #fff;
+    }
+
+    .golf-breaks-wrapper .learn-more-btn:hover {
+        background-color:#0056b3;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .golf-breaks-wrapper .enquire-now-btn {
+        background-color:#00b06b;
+        color: #fff;
+    }
+
+    .golf-breaks-wrapper .enquire-now-btn:hover {
+        background-color:#00ff7f;
+    }
+
+    /* Enquiry form modal */
+    .golf-breaks-wrapper .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .golf-breaks-wrapper .modal-content {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        width: 500px;
+        max-width: 90%;
+    }
+
+    .golf-breaks-wrapper .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .golf-breaks-wrapper .modal-header h3 {
+        margin: 0;
+        color: #00214d;
+    }
+
+    .golf-breaks-wrapper .close-btn {
+        cursor: pointer;
+        font-size: 2.0rem;
+        color: #00214d;
+    }
+
+    .golf-breaks-wrapper .form-group {
+        margin-bottom: 15px;
+    }
+
+    .golf-breaks-wrapper .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #00214d;
+    }
+
+    .golf-breaks-wrapper .form-group input,
+    .golf-breaks-wrapper .form-group select,
+    .golf-breaks-wrapper .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .golf-breaks-wrapper .form-group button {
+        background-color:#00b06b;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .golf-breaks-wrapper .form-group button:hover {
+        background-color:#00ff7f;
+    }
+
+    .golf-breaks-wrapper .view-more-btn {
+        display: block;
+        text-align: center;
+        margin: 30px auto;
+        background-color:#003366;
+        color:white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    .golf-breaks-wrapper .view-more-btn:hover {
+        background-color:#0056b3;
+        transition: all 0.3s ease-in-out;
+    }
+    .fade-in-section .card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in-section .card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Success Modal */
+.success-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+}
+
+.success-modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-modal h2 {
+    color: #00b06b;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 20px;
+}
+
+.success-modal p {
+    font-family: 'Work Sans', sans-serif;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.success-modal button {
+    background-color: #00b06b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.success-modal button:hover {
+    background-color: #00ff7f;
+}
+
+.close-success-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Encapsulated Container */
+
+  /* Encapsulated Styles */
+
+      .why-choose-us-wrapper {
+          max-width: 1800px;
+          margin: auto;
+          padding: 60px 20px;
+          text-align: center;
+          background-color: #f9f9f9;
+      }
+
+      .why-choose-us-wrapper h2 {
+          font-size: 2.5rem;
+          color: #003366;
+          margin-bottom: 50px;
+      }
+
+      .why-choose-us-wrapper .cards-container {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          flex-wrap: wrap;
+      }
+
+      .why-choose-us-wrapper .card {
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+          text-align: center;
+          max-width: 300px;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.6s ease-out;
+      }
+
+      .why-choose-us-wrapper .card img {
+          width: 60px;
+          margin-bottom: 20px;
+          margin: auto;
+      }
+
+      .why-choose-us-wrapper .card h3 {
+          font-size: 1.5rem;
+          color: #003366;
+          margin-bottom: 15px;
+      }
+
+      .why-choose-us-wrapper .card p {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 15px;
+      }
+
+      .why-choose-us-wrapper .card.active {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      /* Request Buttons */
+      .why-choose-us-wrapper .buttons-container {
+          margin-top: 40px;
+      }
+
+      .why-choose-us-wrapper .request-btn {
+          background-color:#003366;
+          color: white;
+          padding: 12px 30px;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-right: 15px;
+          transition: background-color 0.3s ease;
+          text-decoration: none;
+      }
+
+      .why-choose-us-wrapper .request-btn:last-child {
+          background-color:#00b06b;
+      }
+
+      .why-choose-us-wrapper .request-btn:hover {
+          background-color:#0056b3;
+      }
+
+      .why-choose-us-wrapper .request-btn:last-child:hover {
+          background-color:#00ff7f;
+      }
+
+
+/* Encapsulated Container for Top Golf Getaways */
+
+
+    /* Main wrapper */
+    .top-golf-getaways {
+      max-width: 1800px;
+      margin: auto;
+      padding: 60px 20px;
+      font-family: 'Work Sans', sans-serif;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    /* Section title */
+    .top-golf-getaways h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    /* Section subtitle */
+    .top-golf-getaways p.subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 50px;
+    }
+
+    /* Cards container */
+    .top-golf-getaways .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-left: 145px;
+    padding-right: 183px;
+    height: 755px;
+    width: 1800px;
+    margin: auto;
+    border-radius: 9px;
+    }
+
+    /* Individual card */
+    .top-golf-getaways .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      opacity: 0; /* Initially invisible */
+      transform: translateY(50px); /* Move down initially */
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Transition properties */
+    }
+
+    /* Make card visible when scrolled into view */
+    .top-golf-getaways .fade-in {
+      opacity: 1; /* Fade in */
+      transform: translateY(0); /* Reset position */
+    }
+
+    /* Card images */
+    .top-golf-getaways .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    /* Card hover effect */
+    .top-golf-getaways .card:hover .overlayy {
+      opacity: 1;
+    }
+
+    /* Gradient overlay on hover */
+    .top-golf-getaways .overlayy {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0), #021b35);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 10px;
+    }
+
+    /* Card text on hover */
+    .top-golf-getaways .overlayy h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    /* Explore destinations button */
+    .top-golf-getaways .explore-btn {
+      background-color:#00b06b;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .top-golf-getaways .explore-btn:hover {
+      background-color:#00ff7f;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+/* Contact Us Container */
+
+      .contact-us-wrapper {
+          display: flex;
+          justify-content: space-between;
+          background-color: #f8f8f8;
+          padding: 40px 20px;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 1800px;
+          margin: auto;
+          gap: 30px;
+      }
+
+      /* Left Side Contact Info */
+      .contact-info {
+          width: 40%;
+          color: #333;
+      }
+
+      .contact-info h3 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+          color: #003366;
+      }
+
+      .contact-info p {
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+      }
+
+      .contact-info a {
+          color: #007bff;
+          text-decoration: none;
+      }
+
+      .contact-info a:hover {
+          text-decoration: underline;
+      }
+
+      /* Google Map Embed */
+      .contact-info iframe {
+          width: 100%;
+          height: 200px;
+          border: 0;
+      }
+
+      /* Right Side Contact Form */
+      .contact-form {
+          width: 55%;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 30px;
+      }
+
+      .contact-form h3 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+          color: #003366;
+      }
+
+      .contact-form .form-group {
+          margin-bottom: 15px;
+          color: #003366;
+      }
+
+      .contact-form .form-group label {
+          display: block;
+          margin-bottom: 5px;
+          color: #003366;
+      }
+
+      .contact-form .form-group input,
+      .contact-form .form-group textarea,
+      .contact-form .form-group select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 1rem;
+      }
+
+      .contact-form .form-group input[type="checkbox"] {
+          width: auto;
+          margin-right: 5px;
+      }
+
+      .contact-form .form-group .submit-btn {
+          background-color:#00b06b;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1.1rem;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .contact-form .form-group .submit-btn:hover {
+          background-color:#00ff7f;
+      }
+
+/* Encapsulated Footer Container */
+
+      .encapsulated-footer-wrapper {
+          background-color:#1c2343;
+          padding: 40px 20px;
+          color: #fff;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 1800px;
+          margin: auto;
+      }
+
+      /* Footer Content Container */
+      .encapsulated-footer-wrapper .footer-content {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+
+      /* Footer Left Section (Opening Times, Contact Info) */
+      .encapsulated-footer-wrapper .footer-left {
+          width: 40%;
+      }
+
+      .encapsulated-footer-wrapper h3 {
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+          color: #fff;
+      }
+
+      .encapsulated-footer-wrapper p {
+          font-size: 1rem;
+          margin-bottom: 10px;
+          color: #ccc;
+      }
+
+      .encapsulated-footer-wrapper a {
+          color: #00ff7f;
+          text-decoration: none;
+      }
+
+      .encapsulated-footer-wrapper a:hover {
+          text-decoration: underline;
+      }
+
+      /* Footer Right Section (Address, Registration Info) */
+      .encapsulated-footer-wrapper .footer-right {
+          width: 40%;
+      }
+
+      .encapsulated-footer-wrapper .footer-right p {
+          margin-bottom: 5px;
+      }
+
+      .encapsulated-footer-wrapper .footer-right strong {
+          color: #00ff7f;
+      }
+
+      /* Footer Bottom Links and Social Icons */
+      .encapsulated-footer-wrapper .footer-bottom {
+          text-align: center;
+          margin-top: 30px;
+      }
+
+      .encapsulated-footer-wrapper .footer-links {
+          margin-bottom: 15px;
+      }
+
+      .encapsulated-footer-wrapper .footer-links a {
+          margin: 0 15px;
+          color: #00ff7f;
+          text-decoration: none;
+          font-size: 1rem;
+      }
+
+      .encapsulated-footer-wrapper .footer-links a:hover {
+          text-decoration: underline;
+      }
+
+      /* Social Icons */
+      .encapsulated-footer-wrapper .social-icons {
+          margin-top: 10px;
+      }
+
+      .encapsulated-footer-wrapper .social-icons a {
+          margin: 0 10px;
+          display: inline-block;
+      }
+
+      .encapsulated-footer-wrapper .social-icons img {
+          width: 30px;
+          height: 30px;
+      }
+
+      /* Footer Bottom Legal Section */
+      .encapsulated-footer-wrapper .footer-legal {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 0.9rem;
+          color: #ccc;
+      }
+
+      /* Encapsulated Footer Wrapper */
+      .encapsulated-footer {
+          padding: 40px 20px;
+          color: #fff;
+          font-family: 'Work Sans', sans-serif;
+          max-width: 1800px;
+          margin: auto;
+      }
+
+      /* Content Container with Padding */
+      .encapsulated-footer .footer-content {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding: 0 40px; /* Left and right padding */
+      }
+
+      /* Left Section: Opening Times & Contact */
+      .encapsulated-footer .footer-left {
+          width: 40%;
+      }
+
+      .encapsulated-footer h3 {
+          font-size: 1.6rem;
+          margin-bottom: 15px;
+          color: #fff;
+      }
+
+      .encapsulated-footer p {
+          font-size: 1rem;
+          margin-bottom: 8px;
+          color: #ccc;
+      }
+
+      .encapsulated-footer a {
+          color: #00ff7f;
+          text-decoration: none;
+      }
+
+      .encapsulated-footer a:hover {
+          text-decoration: underline;
+      }
+
+      /* Right Section: Address & Registration Info */
+      .encapsulated-footer .footer-right {
+          width: 40%;
+      }
+
+      .encapsulated-footer .footer-right p {
+          margin-bottom: 5px;
+      }
+
+      .encapsulated-footer .footer-right strong {
+          color: #00ff7f;
+      }
+
+      /* Footer Bottom Links and Social Icons */
+      .encapsulated-footer .footer-bottom {
+          text-align: center;
+          margin-top: 30px;
+          padding: 0 40px; /* Adding padding for consistency */
+      }
+
+      .encapsulated-footer .footer-links {
+          margin-bottom: 15px;
+      }
+
+      .encapsulated-footer .footer-links a {
+          margin: 0 15px;
+          color: #00ff7f;
+          text-decoration: none;
+          font-size: 1rem;
+      }
+
+      .encapsulated-footer .footer-links a:hover {
+          text-decoration: underline;
+      }
+
+      /* Social Icons */
+      .encapsulated-footer .social-icons {
+          margin-top: 10px;
+      }
+
+      .encapsulated-footer .social-icons a {
+          margin: 0 10px;
+          display: inline-block;
+      }
+
+      .encapsulated-footer .social-icons img {
+          width: 30px;
+          height: 30px;
+      }
+
+      /* Footer Bottom Green Bar */
+      .footer-green-bar {
+          background-color: #00b06b;
+          padding: 20px;
+          color: #fff;
+          text-align: center;
+          font-size: 0.9rem;
+          padding: 0 40px;
+      }
+
+      /* Footer Bottom Legal Text */
+      .encapsulated-footer .footer-legal {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 0.9rem;
+          color: #ccc;
+      }

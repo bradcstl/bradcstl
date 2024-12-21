@@ -1,0 +1,34 @@
+.trustpilot-container {
+    width: 100%;
+    max-width: 95%;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 13rem;
+    position: relative; /* Keep it relative to avoid overlap */
+    margin-top: 20px; /* Adjust spacing as required */
+    z-index: 1; /* Ensure it's above the background but not conflicting */
+
+}
+
+/* Override Trustpilot Widget Styles */
+.trustpilot-widget {
+    background-color: #ffffff; /* Example background color */
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Further style overrides (use with caution) */
+.trustpilot-widget * {
+    font-family: Arial, sans-serif !important;
+    color: #333 !important;
+}
+.tp-widget-wrapper {
+  align-content: center !important;
+}
+
+/* Example for adjusting specific elements in the widget */
+.trustpilot-widget .star-rating {
+    color: #ff9900 !important; /* Example color for star ratings */
+}

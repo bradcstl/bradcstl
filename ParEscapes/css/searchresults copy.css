@@ -1,0 +1,357 @@
+/* Encapsulated styles for the search filter section */
+.search-filter-section {
+    /*background-color: #f8f9fa;*/
+    /*padding: 20px;*/
+    display: flex;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+.filter-container {
+    display: flex;
+    gap: 3rem;
+    width: 95%;
+    /*max-width: 1000px;*/
+    background-color: #ffffff48;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 20px;
+    align-items: center;
+    /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+    justify-content: center;
+}
+
+.filter-container .filter-item {
+    position: relative;
+}
+
+.filter-container select,
+.filter-container input[type="date"] {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Padding adjusted for icon space */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Icon styling */
+.filter-item .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+/* Placeholder styling within input fields */
+.filter-item select::placeholder,
+.filter-item input::placeholder {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.filter-container button {
+    padding: 12px 25px;
+    background-color: #00b06b;
+    color: #000000;
+    margin-left: 5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-container button:hover {
+    background-color: #00df86;
+}
+
+/*  Right side */
+
+/* Encapsulated styles for the body section */
+.page-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for blur effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    box-sizing: border-box;
+    
+}
+
+/* Main content container to split filter and results */
+.content-container {
+    display: flex;
+    width: 100%;
+    /*max-width: 1200px;*/
+    gap: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    background-image: url('images/redfox.jpg'); /* Replace with your image path */
+background-size: cover; /* Makes the image cover the entire container */
+background-position: center; /* Centers the image */
+background-repeat: no-repeat; /* Prevents tiling */
+    /*box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);*/
+    
+    
+    
+}
+
+/* Filter section styling */
+.filter-section {
+    flex: 0 0 20%; /* Fixed width for filter */
+    height: 25rem;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border-width: 0.5rem;
+    border-color: #00b06b;
+    border-style: solid;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.filter-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+.filter-group select,
+.filter-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Search Results Section */
+.search-results {
+    flex: 1; /* Occupies remaining space */
+    background-color: #ffffff33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    font-family: Arial, sans-serif;
+}
+
+.search-results-title{
+  color:royalblue;
+  vertical-align: middle;
+}
+
+.reset-link {
+    color: #32cd32;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: right;
+    display: block;
+    margin-top: -10px;
+}
+
+.reset-link:hover {
+    text-decoration: underline;
+}
+
+/* Styling for checkbox and radio buttons in filter */
+.checkbox-group, .radio-group {
+    margin: 10px 0;
+}
+.radio-group{
+    display: grid;
+    color: black;
+}
+/* Scrollable Search Results Container */
+.search-results-container {
+    width: 97%; /* Takes full width of the parent */
+    max-height: 93%; /* Sets a fixed maximum height for the container */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 20px; /* Adds padding around the results */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between cards */
+    background-color: #fff; /* Optional: Background for better contrast */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Custom scrollbar for better aesthetics */
+.search-results-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.search-results-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track background */
+}
+
+.search-results-container::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.search-results-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar thumb hover color */
+}
+
+  /* Golf Resort Card Styling */
+  .golf-resort-card {
+      display: flex;
+      gap: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      position: relative;
+  }
+
+  /* Left Image Section */
+  .golf-resort-image {
+      width: 30%;
+      border-radius: 10px;
+      overflow: hidden;
+  }
+
+  .golf-resort-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+  }
+
+  /* Right Content Section */
+  .golf-resort-content {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .location-icon, .star-rating, .price-button img {
+      vertical-align: middle;
+  }
+
+  /* Resort Name and Tags */
+  .resort-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #1c2343;
+  }
+
+  .tags {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+  }
+
+  .tag {
+      background-color: #333;
+      color: #fff;
+      font-size: 0.8em;
+      padding: 5px 10px;
+      border-radius: 5px;
+  }
+
+  /* Quick Description */
+  .resort-description {
+      font-size: 0.9em;
+      color: #555;
+  }
+
+  /* Recommended Breaks Section */
+  .recommended-breaks {
+      margin-top: 10px;
+  }
+
+  .recommended-breaks-title {
+      font-weight: bold;
+      color: #333;
+  }
+
+  /* Breaks List */
+  .breaks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .break-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+  }
+
+  .break-item-info {
+      font-size: 0.9em;
+      color: #555;
+  }
+
+  .price-button {
+      display: flex;
+      align-items: center;
+      background-color: #00b06b;
+      color: #fff;
+      font-size: 1em;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+  /* View Breaks Button */
+  .view-breaks-button {
+      display: block;
+  text-align: center;
+  
+  background-color:#003366;
+  color:white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 10.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  }
+
+  .view-breaks-button:hover{
+      background-color: #00468b;
+      color: #ffffff;
+  }

@@ -1,0 +1,73 @@
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    /* General body styling */
+    body {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  
+    /* Navigation bar adjustments */
+    .encapsulated-header-wrapper .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Slider container adjustments */
+    .slider-container {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Search bar adjustments */
+    .search-bar input {
+      width: 100%;
+    }
+  
+    /* Adjusting the card grid for mobile */
+    .cards-container {
+      grid-template-columns: 1fr;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    /* Promotion bar */
+    .promotion-bar {
+      flex-direction: column;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    /* Footer adjustments */
+    .encapsulated-footer-wrapper .footer-left, 
+    .encapsulated-footer-wrapper .footer-right {
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* Contact section */
+    .contact-us-wrapper {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    /* Cards adjustments */
+    .card img {
+      height: auto;
+      object-fit: cover;
+    }
+  
+    /* Adjusting text sizes */
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .search-container h2 {
+      font-size: 1.5rem;
+    }
+  }

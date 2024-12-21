@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121B25">
+
+  <!-- Safari on iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Microsoft Edge/Windows -->
+  <meta name="msapplication-navbutton-color" content="#121B25">
+  <meta name="msapplication-TileColor" content="#121B25">
+  <title>Par5Escapes</title>
+
+  <!-- Bootstrap's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom style CSS-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/hoteldetails.css">
+    <link rel="stylesheet" href="css/hoteloffercontainer.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
+
+    <div class="encapsulated-header-wrapper">
+      <!-- Main Nav -->
+      <div class="main-nav">
+          <!-- Logo -->
+          <div class="logo">
+             <a href="index.html"> <img src="images/par5logo_h.png" alt="Logo"></a>
+          </div>
+
+        <!-- Green Line -->
+   <!-- <div class="green-bar"></div>-->
+  
+      <!-- Hamburger Menu (Only visible on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+      
+  <!-- Side Menu for Mobile -->
+  <div class="side-menu" id="sideMenu">
+     <!-- Side Menu Header with Logo and Close Button -->
+     <div class="side-menu-header">
+        <!-- Logo in Side Menu -->
+        <div class="logo">
+          <a href="index.html"><img src="images/par5logo_h.png" alt="Logo"></a>
+        </div>
+        <!-- Close Button -->
+        <div class="close-btn" id="closeNav">&times;</div>
+    </div>
+     <!-- Dropdown for Destinations -->
+     <button class="dropdown-btn">Destinations <i class="fas fa-chevron-down dropdown-arrow"></i></button>
+     <div class="dropdown-content">
+       <a href="#">Turkey</a>
+       <a href="#">Spain</a>
+       <a href="#">Portugal</a>
+       <a href="#">UAE</a>
+       <a href="#">France</a>
+       <a href="#">United Kingdom</a>
+       <a href="#">Morocco</a>
+       <a href="#">Oman</a>
+     </div>
+    <a href="#">Courses</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlayy" id="overlayy"></div>
+
+          <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#" class="nav-item">Destinations<i class="fas fa-chevron-down"></i></a>
+            <!-- Dropdown -->
+            <div class="dropdown-menu destinations-menu">
+                <div class="dest-column">
+                    <a href="#">Portugal</a>
+                    <a href="#">Spain</a>
+                    <a href="#">Turkey</a>
+                    <a href="#">Canary Islands</a>
+                    <a href="#">Greece</a>
+                    <a href="#">Morocco</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">The UK</a>
+                    <a href="#">Ireland</a>
+                    <a href="#">Abu Dhabi</a>
+                    <a href="#">Dubai</a>
+                    <a href="#">South Africa</a>
+                    <a href="#">Mauritius</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">Cyprus</a>
+                    <a href="#">France</a>
+                    <a href="#">USA</a>
+                    <a href="#">Caribbean</a>
+                    <a href="#">Italy</a>
+                    <a href="#">Belgium</a>
+                </div>
+                <div class="dest-column">
+                    <a href="#">Bulgaria</a>
+                    <a href="#">Ras Al Khaimah</a>
+                    <a href="#">Switzerland</a>
+                    <a href="#">Tunisia</a>
+                </div>
+            </div>
+
+            <a href="#">Courses</a>
+            <a href="#">Tuition Holidays</a>
+            <a href="#">Offers</a>
+            <a href="#">Inspiration</a>
+        </div>
+
+        <!-- Contact Us & Opening Hours -->
+        <div class="d-flex align-items-center">
+            <div class="opening-hours">
+                <p>Open today 8am - 6pm</p>
+                <p><span>01342 811 777</span></p>
+            </div>
+            <div class="contact-us">
+                <button>Contact Us <i class="fas fa-chevron-down"></i></button>
+                <!-- Contact Us Dropdown -->
+                <div class="contact-us-dropdown">
+                    <p>Call us now on <strong>01342 811 777</strong></p>
+                    <p>Opening times:</p>
+                    <p>Mon-Fri: 8am - 6pm</p>
+                    <p>Sat: 9am - 1pm</p>
+                    <p>Sun: Closed</p>
+                    <a href="#">Request a callback</a>
+                    <a href="#">Request a quote</a>
+                    <a href="#">Ask a question</a>
+                </div>
+            </div>
+        </div>
+    
+      <!-- JavaScript to toggle side menu and overlay -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlayy = document.getElementById('overlayy');
+    const closeNav = document.getElementById('closeNav');
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+
+    // Toggle side menu and overlay
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+      overlayy.classList.toggle('active');
+    });
+
+    // Close side menu and overlay when clicking on the overlay
+    overlayy.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlayy.classList.remove('active');
+    });
+    closeNav.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlayy.classList.remove('active');
+    });
+     // Toggle dropdown for Destinations
+     dropdownBtn.addEventListener('click', function () {
+      this.classList.toggle('active');
+    });
+  </script>
+</div>
+</div>
+
+<!---------------------------------Hotel-Gallery-Start--------------------------------->
+
+<div class="hotel-gallery">
+    <div class="main-image">
+        <img src="images/cullinan_main.jpg" alt="Main Hotel Image onclick=" onclick="openModall('images/cullinan_main.jpg')">
+    </div>
+
+     <div class="secondary-images-container">
+        <button class="slider-button top" onclick="scrollUp()">▲</button>
+        <div class="secondary-images" id="secondary-images">
+            <div class="secondary-image">
+            <img src="images/denia marriott.jpg" alt="Secondary Image 1" onclick="openModall('images/denia marriott.jpg')">
+            </div>
+            <div class="secondary-image">
+            <img src="images/du golf rotana.jpg" alt="Secondary Image 2" onclick="openModall('images/denia marriott.jpg')">
+            </div>
+            <div class="secondary-image">
+            <img src="images/fRANCE.jpg" alt="Secondary Image 3" onclick="openModall('images/denia marriott.jpg')">
+            </div>
+            <div class="secondary-image">
+            <img src="images/dom pedro.jpg" alt="Secondary Image 4" onclick="openModall('images/denia marriott.jpg')">
+            </div>
+            <div class="secondary-image">
+            <img src="images/dom pedro.jpg" alt="Secondary Image 5" onclick="openModall('images/denia marriott.jpg')">
+            </div>
+    </div>
+    <button class="slider-button bottom" onclick="scrollDown()">▼</button>
+</div>
+
+ <!-- Modal for Image Enlargement -->
+ <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModall()">×</button>
+        <img id="modalImage" src="" alt="Enlarged Image">
+    </div>
+</div>
+</div>
+<!---------------------------------Hotel-Gallery-End--------------------------------->
+
+<div class="breadcrumb-container">
+ <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="#">Home</a>
+        <span class="separator">›</span>
+        <a href="#">Europe</a>
+        <span class="separator">›</span>
+        <a href="#">Turkey</a>
+        <span class="separator">›</span>
+        <a href="#">Belek</a>
+        <span class="separator">›</span>
+        <span>Sueno Hotels Golf Belek</span> <!-- Current page, no link -->
+    </nav>
+</div>
+
+<div class="hotel-header-container">
+    <!-- Hotel Information Section -->
+    <div class="hotel-info" >
+        <span class="badge">Golf Resort</span>
+        <h1 class="hotel-name">Sueno Hotels Golf Belek</h1>
+    </div>
+
+    <!-- Location and Rating Section -->
+    <div class="location">
+        <i class="fas fa-map-marker-alt"></i> <span>BELEK, TURKEY</span>
+    </div>
+</div>
+
+<div class="page-container">
+    <!-- Tabs Container -->
+    <div class="popup">
+        <div class="tabs">
+            <input type="radio" id="tab1" name="tab" checked="true">
+            <label for="tab1" data-tab="1" class="tab-label active">Overview</label>
+            <input type="radio" id="tab2" name="tab">
+            <label for="tab2" data-tab="2" class="tab-label">Golf Courses</label>
+            <input type="radio" id="tab3" name="tab">
+            <label for="tab3" data-tab="3" class="tab-label">Accommodation</label>
+            <input type="radio" id="tab4" name="tab">
+            <label for="tab4" data-tab="4" class="tab-label">Restaurant & Bars</label>
+            <input type="radio" id="tab5" name="tab">
+            <label for="tab5" data-tab="5" class="tab-label">Spa & Leisure</label>
+            <input type="radio" id="tab6" name="tab">
+            <label for="tab6" data-tab="6" class="tab-label">Location</label>
+            <input type="radio" id="tab7" name="tab">
+            <label for="tab7" data-tab="7" class="tab-label">On Site Activities</label>
+            <input type="radio" id="tab8" name="tab">
+            <label for="tab8" data-tab="8" class="tab-label">Nearby</label>
+            <div class="marker">
+                <div id="top"></div>
+                <div id="bottom"></div>
+            </div>
+        </div>
+     <!-- Content Areas -->
+     <div class="tab-content-container">
+        <div class="tab-content-area active" data-content="1">
+            <h2>Overview</h2>
+            <p>The five-star luxury Sueno Golf Hotel is set in the heart of Belek in Turkey and is sure to meet your every need for a truly luxurious holiday. Sueno Hotels Golf Belek was designed with the golfer in mind; less than five minutes from room to tee, this is one of the only hotels in Belek with two golf courses on-site. This is an ideal choice for your all-inclusive Turkey golf package and is understandably one of our best-sellers.</p>
+        </div>
+        <div class="tab-content-area" data-content="2">
+            <h2>Golf Courses</h2>
+            <p>It takes just a few minutes to get from your room to the 1st tee on one of the two fantastic on-site golf courses, the Dunes and the Pines – making Sueno golf extremely popular for guests. There is also a well-stocked pro shop as well as Sueno Golf academy where you can make use of the driving range, chipping area, and putting green to prepare your room.</p>
+        </div>
+        <div class="tab-content-area" data-content="3">
+            <h2>Accommodation</h2>
+            <p>There are 174 rooms at Sueno Golf Resort - split out into 86 Standard Rooms, 71 Senior Rooms, 7 Junior Suites and 2 King Suites, 2 Royal Suites and 4 Jacuzzi Suites - each with air conditioning, plasma satellite TV and a balcony. Each room has the luxury of having stunning sea views or a vantage out across the two stunning courses at Sueno Golf Club.</p>
+        </div>
+        <div class="tab-content-area" data-content="4">
+            <h2>Restaurant & Bars</h2>
+            <p>Information about dining options.</p>
+        </div>
+        <div class="tab-content-area" data-content="5">
+            <h2>Spa & Leisure</h2>
+            <p>Description of spa and leisure facilities.</p>
+        </div>
+        <div class="tab-content-area" data-content="6">
+            <h2>Location</h2>
+            <p>Details about the location and surrounding area.</p>
+        </div>
+        <div class="tab-content-area" data-content="7">
+            <h2>On Site Activities</h2>
+            <p>Information on activities within the resort.</p>
+        </div>
+        <div class="tab-content-area" data-content="8">
+            <h2>Nearby</h2>
+            <p>Information on nearby attractions and points of interest.</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Content Container - Placeholder for additional content next to tabs -->
+    <div class="offer-container">
+        
+        <div class="offer-labels">
+            <div class="offer-label">1 in 8 Free</div>
+            <div class="offer-label">Transfers Included</div>
+        </div>
+        <div class="top-picks">Top picks</div>
+        <div class="date-info">Add arrival date for more accurate pricing</div>
+    
+        <!-- Arrival Date Input -->
+        <div class="arrival-date">
+            <input type="text" placeholder="Arrival date">
+        </div>
+    
+        <!-- Offers Section -->
+        <div class="offer-block">
+            <div>
+                <div class="offer-title">⭐ Experts Choice</div>
+                <div class="offer-details">7 nights, all inclusive, unlimited golf</div>
+            </div>
+            <div>
+                <div class="price">from £869pp</div>
+                <div class="breakpoints-info">Earn 86 Breakpoints</div>
+            </div>
+        </div>
+    
+        <div class="offer-block">
+            <div>
+                <div class="offer-details">7 nights, all inclusive, 3 rounds</div>
+            </div>
+            <div>
+                <div class="price">from £729pp</div>
+                <div class="breakpoints-info">Earn 72 Breakpoints</div>
+            </div>
+        </div>
+    
+        <!-- Breakpoints Section -->
+        <div class="breakpoints">
+            <img src="https://img.icons8.com/emoji/48/000000/money-mouth-face.png" alt="Breakpoints">
+            <div>Use your Breakpoints and save</div>
+        </div>
+        <div style="font-size: 12px; color: #777;">Prices are per person based on double room occupancy, unless otherwise stated.</div>
+    
+        <!-- Buttons -->
+        <div class="offer-buttons">
+            <div class="learn-more-btn">Learn More</div>
+              <div class="enquire-now-btn" onclick="openModal()">Enquire Now</div>
+        </div>
+    </div>
+</div>
+<div class="golf-breaks-wrapper ">
+<!-- Enquiry Form Modal -->
+    <!-- Enquiry Form Modal -->
+    <div class="modal" id="enquiryModal">
+        <form id="enquiryForm" action="sendEnquiry.php" method="POST">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Enquire about this package</h3>
+              <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="form-group">
+              <label for="travel-date">Travel Date</label>
+              <input type="date" id="travel-date" name="travel_date" required>
+            </div>
+            <div class="form-group">
+              <label for="party-size">Party Size</label>
+              <select id="party-size" name="party_size" required>
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="requirements">Requirements</label>
+              <textarea id="requirements" name="requirements" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <button type="submit">Send Enquiry</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+      <!-- Success Modal -->
+      <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+          <span class="close-success-btn" id="closeSuccessModal">&times;</span>
+          <h2>Enquiry Sent Successfully!</h2>
+          <p>Thank you for your enquiry. Our team will get back to you shortly.</p>
+          <button id="closeSuccessBtn">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="certification-logos-container">
+    <img src="images/abta-logo-B7ACA4B9F5-seeklogo.com.png" alt="Certification 1" class="logo">
+    <img src="images/ATOL_Protected-logo-39861CA549-seeklogo.com.png" alt="Certification 2" class="logo">
+</div>
+
+<!----------------------------SIGNUP-TO-OUR-NEWSLETTER-START--------------------->
+<section class="newsletter-section">
+    <div class="newsletter-container">
+      <h2>Sign up to our newsletter</h2>
+      <form class="newsletter-form">
+        <input type="text" placeholder="First name" class="newsletter-input">
+        <input type="text" placeholder="Last name" class="newsletter-input">
+        <input type="email" placeholder="Email address" class="newsletter-input">
+        <button type="submit" class="newsletter-button">Sign up</button>
+      </form>
+    </div>
+</section>
+  <!----------------------------SIGNUP-TO-OUR-NEWSLETTER-END--------------------->
+
+  <!----------------------------FOOTER-START--------------------------------->
+<footer class="footer-section">
+    <div class="footer-container">
+      <!-- Left Section -->
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="/images/PAR5_NEW.png" alt="Par5 Escapes Logo">
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-details">
+          <div class="footer-logo2">
+            <img src="/images/abta-logo-B7ACA4B9F5-seeklogo.com.png" alt="Par5 Escapes Logo">
+          </div>
+        </div>
+      </div>
+      <div class="partners-slider-container">
+        <h3 class="partners-slider-title">Proudly in Partnership With</h3>
+        <div class="partners-slider-wrapper">
+          <div class="partners-slider-track">
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 1"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 2"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 3"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 4"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 5"></div>
+            <!-- Duplicate logos for smooth scrolling -->
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 1"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 2"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 3"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 4"></div>
+            <div class="partner-logo-item"><img src="/images/kisspng-golf-royalty-free-drawing-5af8731d229039.2152049215262318371416.jpg" alt="Partner 5"></div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  
+    <!-- Bottom Section -->
+    <div class="footer-bottom">
+      <p>© Par5 Escapes 2024 - All rights reserved.</p>
+    </div>
+  </footer>
+  <!----------------------------FOOTER-END--------------------------------->
+
+<script src="js/hotelmodal.js"></script>
+<script src="js/hoteltabfunction.js"></script>
+<script src="js/mobilehamburger.js"></script>
+<script src="js/slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<script src="js/trustpilot.js"></script>
+<script src="js/popgolfs.js"></script>
+<script src="js/whychoose.js"></script>
+<script src="js/topgetaways.js"></script>
+<script src="js/specialoffers.js"></script>
+<script src="js/enquirymodal.js"></script>
+
+</body>
+</html>

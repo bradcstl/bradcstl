@@ -1,0 +1,256 @@
+<body>
+<div class="golf-package-card">
+    <style>
+        /* Card Container */
+.golf-package-card {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section */
+.card-left {
+  flex: 1;
+}
+
+.hotel-image-container {
+  position: relative;
+}
+
+.hotel-image {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.green-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 10px;
+}
+
+.preview-slider {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.preview-images {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.preview-image {
+  height: 80px;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+}
+
+.preview-image.opaque {
+  opacity: 0.6;
+}
+
+.slider-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.read-more {
+  color: #2ecc71;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.share-section {
+  text-align: left;
+}
+
+.social-icons i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Right Section */
+.card-right {
+  flex: 2;
+}
+
+.hotel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.rating i {
+  color: #f1c40f;
+}
+
+.tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.description {
+  color: #555;
+  margin: 1rem 0;
+}
+
+.packages-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.packages-table th,
+.packages-table td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.badge {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.see-all-breaks {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+    </style>
+    <!-- Left Section -->
+    <div class="card-left">
+      <div class="hotel-image-container">
+        <img src="images/courses_cornelia 1.png" alt="Hotel Image" class="hotel-image">
+        <div class="green-bar">
+          <span class="resort-title"><i class="fas fa-golf-ball"></i> Golf Resort</span>
+          <span class="location"><i class="fas fa-map-marker-alt"></i> Belek, Turkey</span>
+        </div>
+      </div>
+      <div class="preview-slider">
+        <button class="slider-btn prev-btn">&lt;</button>
+        <div class="preview-images">
+          <img src="images/Turkey.jpg" alt="Preview 1" class="preview-image">
+          <img src="images/titanic_main.jpg" alt="Preview 2" class="preview-image opaque">
+          <img src="images/torremirona.jpg" alt="Preview 3" class="preview-image opaque">
+        </div>
+        <button class="slider-btn next-btn">&gt;</button>
+      </div>
+      <p class="read-more">Read more about this hotel</p>
+      <div class="share-section">
+        <p>Share</p>
+        <div class="social-icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-whatsapp"></i>
+          <i class="fas fa-envelope"></i>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Right Section -->
+    <div class="card-right">
+      <h3 class="hotel-title">Kaya Palazzo Golf Resort Hotel</h3>
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="tags">
+        <span class="tag blue">1 in 8 Free</span>
+        <span class="tag blue">Transfers Included</span>
+      </div>
+      <p class="description">
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort
+        offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen
+        satellite TV. Each is fitted with a private bathroom.
+      </p>
+      <h4 class="packages-title">Recommended Breaks</h4>
+      <table class="packages-table">
+        <thead>
+          <tr>
+            <th>Nights</th>
+            <th>Board</th>
+            <th>Rounds</th>
+            <th>Details</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>All Inclusive</td>
+            <td>3</td>
+            <td>Pines Course, Dunes Golf Course</td>
+            <td>
+              <span class="badge">All Inclusive</span>
+              <span class="price">£532</span>
+              <i class="fas fa-external-link-alt"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>All Inclusive</td>
+            <td>4</td>
+            <td>Pines Course, Dunes Golf Course</td>
+            <td>
+              <span class="badge">All Inclusive</span>
+              <span class="price">£532</span>
+              <i class="fas fa-external-link-alt"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Exclusive</td>
+            <td>5</td>
+            <td>Pines Course, Dunes Golf Course</td>
+            <td>
+              <span class="badge">Exclusive</span>
+              <span class="price">£700</span>
+              <i class="fas fa-external-link-alt"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="see-all-breaks">See All Breaks</button>
+    </div>
+  </div>
+</body>

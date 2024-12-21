@@ -1,0 +1,145 @@
+body{
+  color: #003366 !important;
+}
+
+.golf-resort-card {
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section,
+  .right-section {
+    flex: 1;
+  }
+  
+  .main-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .green-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00b06b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .preview-slider {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+  }
+  
+  .slider-images {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+  }
+  
+  .preview-image {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .slider-btn {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .see-details {
+    display: block;
+    color: #00b06b;
+    margin: 10px 0;
+  }
+  
+  .share-section {
+    margin-top: 10px;
+  }
+  
+  .share-section h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .icons i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hotel-header h3 {
+    font-size: 18px;
+    color: #003366;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .tag {
+    background-color: #007bff;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .packages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  .packages-table th,
+  .packages-table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .view-breaks {
+    background-color: #00b06b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
