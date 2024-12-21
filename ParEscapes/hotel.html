@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/hoteldetails.css">
     <link rel="stylesheet" href="css/hoteloffercontainer.css">
+    <link rel="stylesheet" href="css/searchresults_hotel.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,8 +219,274 @@
 </div>
 <!---------------------------------Hotel-Gallery-End--------------------------------->
 
-<!---------------------------------Hotel Desc-Start--------------------------------->
+<!---------------------------------FILTER START---------------------------------------->
+<div class="search-filter-section">
+  <!-- Filter container -->
+  <div class="filter-container">
+      <!-- Destination Field with Icon and Placeholder -->
+      <div class="filter-item">
+          <span class="icon">&#x1F4CD;</span> <!-- Location pin icon -->
+          <select id="destination" aria-label="Choose your destination">
+              <option value="" disabled selected hidden>Choose your destination...</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Spain">Spain</option>
+              <option value="Portugal">Portugal</option>
+              <option value="USA">USA</option>
+              <!-- Add more options as needed -->
+          </select>
+      </div>
 
+      <!-- Arrival Date Field with Placeholder -->
+      <div class="filter-item">
+          <input type="date" id="arrivalDate" placeholder="Arrival Date">
+      </div>
+
+      <!-- Search Button -->
+      <button onclick="searchTours()">SEARCH</button>
+  </div>
+</div>
+
+
+<script>
+function searchTours() {
+  const destination = document.getElementById('destination').value;
+  const arrivalDate = document.getElementById('arrivalDate').value;
+
+  // Validate inputs
+  if (!destination || !arrivalDate) {
+    alert("Please select a destination and arrival date.");
+    return;
+  }
+
+  // AJAX request to fetch data
+  fetch('fetch_packages.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `location=${encodeURIComponent(destination)}&search_date=${encodeURIComponent(arrivalDate)}`
+  })
+    .then(response => response.json())
+    .then(data => {
+      const searchResultsContainer = document.querySelector('.search-results-container');
+      searchResultsContainer.innerHTML = ''; // Clear previous results
+
+      // Render cards dynamically
+      data.forEach(package => {
+        const previewImagesHTML = package.preview_images.map(image => `
+          <img src="images/${image}" alt="Preview" class="preview-image">
+        `).join('');
+
+        const card = `
+          <div class="golf-resort-card">
+            <div class="left-section">
+              <div class="main-image-container">
+                <div class="green-bar">
+                  <span><i class="fas fa-hotel"></i> Golf Resort</span>
+                  <span><i class="fas fa-map-marker-alt"></i> ${package.location}</span>
+                </div>
+                <img src="images/${package.main_image}" alt="${package.resort_name}" class="main-image">
+              </div>
+              <div class="preview-slider">
+                <button class="slider-btn prev-btn">❮</button>
+                <div class="slider-images">
+                  ${previewImagesHTML}
+                </div>
+                <button class="slider-btn next-btn">❯</button>
+              </div>
+              <a href="#" class="see-details">See hotel details.</a>
+            </div>
+            <div class="right-section">
+              <div class="hotel-header">
+                <h3>${package.resort_name}</h3>
+                <div class="stars">${'★'.repeat(package.star_rating)}</div>
+              </div>
+              <div class="tags">
+                <span class="tag">${package.tag1}</span>
+                <span class="tag">${package.tag2}</span>
+              </div>
+              <p class="description">${package.description}</p>
+              <h4>Recommended breaks</h4>
+              <table class="packages-table">
+                <thead>
+                  <tr>
+                    <th>Nights</th>
+                    <th>Board</th>
+                    <th>Rounds</th>
+                    <th>Details</th>
+                    <th>Price (pp)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${package.recommended_breaks.map(breakData => `
+                    <tr>
+                      <td>${breakData.nights}</td>
+                      <td>${breakData.board}</td>
+                      <td>${breakData.rounds}</td>
+                      <td>${breakData.details}</td>
+                      <td><img src="icons/${breakData.badge}" alt="Badge"> £${breakData.price}</td>
+                    </tr>`).join('')}
+                </tbody>
+              </table>
+              <button class="view-breaks">See all breaks</button>
+            </div>
+          </div>
+        `;
+        searchResultsContainer.innerHTML += card;
+      });
+    })
+    .catch(error => console.error('Error fetching packages:', error));
+}
+</script>
+
+
+<!---------------------------------FILTER END---------------------------------------->
+
+<!---------------------------------Hotel Desc-Start--------------------------------->
+<div class="page-container">
+  <!-- Hotel Description Block -->
+<div class="hotel-description">
+  <h3>Overview</h3>
+  <div class="description-content">
+    <p>
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen satellite TV. Each is fitted with a private bathroom. Some also have a terrace offering pool and nature views.
+    </p>
+<h3>Golf Courses</h3>
+    <p>
+      Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf  Resort offers air-conditioned units with free WiFi, safe, electric  kettle and flat-screen satellite TV. Each is fitted with a private  bathroom. Some also have a terrace offering pool and nature views. 
+    </p>
+<h3>Accomodation</h3>
+
+    <p>
+      Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf  Resort offers air-conditioned units with free WiFi, safe, electric  kettle and flat-screen satellite TV. Each is fitted with a private  bathroom. Some also have a terrace offering pool and nature views. 
+    </p>
+
+<h3>Restaurant & Bars</h3>
+
+    <p>
+      Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf  Resort offers air-conditioned units with free WiFi, safe, electric  kettle and flat-screen satellite TV. Each is fitted with a private  bathroom. Some also have a terrace offering pool and nature views. 
+    </p>
+
+<h3>Overview</h3>
+
+    <p>
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen satellite TV. Each is fitted with a private bathroom. Some also have a terrace offering pool and nature views.
+    </p>
+    <h3>Overview</h3>
+
+    <p>
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen satellite TV. Each is fitted with a private bathroom. Some also have a terrace offering pool and nature views.
+    </p>
+    <h3>Overview</h3>
+
+    <p>
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen satellite TV. Each is fitted with a private bathroom. Some also have a terrace offering pool and nature views.
+    </p>
+    <h3>Overview</h3>
+
+    <p>
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen satellite TV. Each is fitted with a private bathroom. Some also have a terrace offering pool and nature views.
+    </p>
+    <h3>Overview</h3>
+
+    <p>
+        Featuring an elegant décor with modern furnishings, Kaya Palazzo Golf Resort offers air-conditioned units with free WiFi, safe, electric kettle, and flat-screen satellite TV. Each is fitted with a private bathroom. Some also have a terrace offering pool and nature views.
+    </p>
+
+  </div>
+<button class="read-more-btn"><strong>Read More</strong></button>
+</div>
+
+<!-- CSS for Styling (if needed) -->
+<style>
+  .hotel-description {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      margin-top: 1rem;
+      width: 80%;
+      transition: height 0.5s ease-in-out;
+      overflow: hidden;
+  }
+
+  .hotel-description h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #333;
+  }
+
+  .hotel-description p {
+      font-size: 1em;
+      line-height: 1.5;
+      color: #555;
+  }
+
+.description-content {
+        max-height: 30rem;
+        overflow: hidden;
+        position: relative;
+        transition: max-height 0.5s ease;
+    }
+
+    .description-content.expanded {
+        max-height: 100%;
+    }
+
+    .description-content::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f9f9f9 100%);
+        transition: opacity 0.5s ease;
+    }
+
+    .description-content.expanded::after {
+        opacity: 0;
+    }
+
+    .read-more-btn {
+        margin-top: 10px;
+        padding: 10px 15px;
+        font-size: 1em;
+        color: #007bff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .read-more-btn strong {
+        text-decoration: underline;
+    }
+
+    .read-more-btn:hover {
+        color: #0056b3;
+    }
+</style>
+<!-- JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const readMoreBtn = document.querySelector('.read-more-btn');
+      const descriptionContent = document.querySelector('.description-content');
+      const hotelDescription = document.querySelector('.hotel-description');
+
+      readMoreBtn.addEventListener('click', () => {
+          descriptionContent.classList.toggle('expanded');
+          hotelDescription.style.height = descriptionContent.classList.contains('expanded') ? 'auto' : '';
+          
+          if (descriptionContent.classList.contains('expanded')) {
+              readMoreBtn.innerHTML = '<strong>Read Less</strong>';
+          } else {
+              readMoreBtn.innerHTML = '<strong>Read More</strong>';
+          }
+      });
+  });
+</script>
     <!-- Content Container - Placeholder for additional content next to tabs -->
     <div class="offer-container">
         
@@ -336,6 +603,7 @@
     <img src="images/abta-logo-B7ACA4B9F5-seeklogo.com.png" alt="Certification 1" class="logo">
     <img src="images/ATOL_Protected-logo-39861CA549-seeklogo.com.png" alt="Certification 2" class="logo">
 </div>
+</div>
 <!---------------------------------Hotel Desc-End--------------------------------->
 
 <!----------------------------SIGNUP-TO-OUR-NEWSLETTER-START--------------------->
@@ -412,6 +680,7 @@
 <script src="js/topgetaways.js"></script>
 <script src="js/specialoffers.js"></script>
 <script src="js/enquirymodal.js"></script>
+<script src="js/searchresults2.js"></script>
 
 </body>
 </html>
