@@ -1,77 +1,132 @@
 /* Encapsulated styles for the search filter section */
+.arrival-date-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.arrival-date-label {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.arrival-date-container input[type="date"] {
+  width: 200px; /* Adjust width as needed */
+  padding: 12px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f9f9f9;
+  padding-right: 35px; /* Space for the calendar icon */
+}
+
+.arrival-date-container .calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #00db84; /* Make the icon green */
+  pointer-events: none;
+}
+
+.calendar-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #00db84; /* Set stroke color to green */
+  stroke-width: 2px;
+}
+
+
 .search-filter-section {
-    /*background-color: #f8f9fa;*/
-    /*padding: 20px;*/
-    display: flex;
-    margin-top: 7rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-    align-items: center;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+  display: flex;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter-container {
-    display: flex;
-    gap: 3rem;
-    width: 95%;
-    /*max-width: 1000px;*/
-    background-color: #ffffff48;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 10px 20px;
-    align-items: center;
-    /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
-    justify-content: center;
+  display: flex;
+  gap: 3rem;
+  width: 80%;
+  background-color: #cecece7e;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: -6rem;
+  height: 6rem;
 }
 
 .filter-container .filter-item {
-    position: relative;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.filter-container select,
-.filter-container input[type="date"] {
-    width: 100%;
-    padding: 12px 15px 12px 40px; /* Padding adjusted for icon space */
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    outline: none;
-    background-color: #f9f9f9;
-    color: #333;
+.arrival-date-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Icon styling */
-.filter-item .icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888;
+.arrival-date-label {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 5px;
 }
 
-/* Placeholder styling within input fields */
-.filter-item select::placeholder,
-.filter-item input::placeholder {
-    font-size: 14px;
-    color: #aaa;
+.arrival-date-container input[type="date"] {
+  width: 200px; /* Adjust width as needed */
+  padding: 12px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f9f9f9;
+  padding-right: 35px; /* Space for the calendar icon */
+}
+
+.arrival-date-container .calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('calendar-icon.png') no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
 }
 
 .filter-container button {
-    padding: 12px 25px;
-    background-color: #00b06b;
-    color: #000000;
-    margin-left: 5rem;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  padding: 12px 25px;
+  background-color: #00db84;
+  color: #000000;
+  margin-left: 5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 12rem;
 }
 
 .filter-container button:hover {
-    background-color: #00df86;
+  background-color: #00df86;
 }
 
 /*  Right side */
